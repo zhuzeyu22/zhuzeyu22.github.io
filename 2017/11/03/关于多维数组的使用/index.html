@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="qwe">
+    <meta name="description" content="大家都知道 如何直接初始化一个数组。  一维数组 char a[n]; 二维数组 char a[n][m]; 三维数组 char a[n][m][p];  因为数组是需要在编译时确定大小的，并且存放在栈中，或者静态区。  那麽我们如何获得 动态数组 ？   大家也都知道 数组就是一片连续的内存空间。  那麽，任意大小、任意维度的数组，也不过是一块和大小和维度相关的内存空间罢了。  所有动态申请的空">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于多维数组的使用">
+<meta property="og:title" content="关于多维数组的构造方法">
 <meta property="og:url" content="http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/index.html">
 <meta property="og:site_name" content="fi15">
-<meta property="og:description" content="qwe">
+<meta property="og:description" content="大家都知道 如何直接初始化一个数组。  一维数组 char a[n]; 二维数组 char a[n][m]; 三维数组 char a[n][m][p];  因为数组是需要在编译时确定大小的，并且存放在栈中，或者静态区。  那麽我们如何获得 动态数组 ？   大家也都知道 数组就是一片连续的内存空间。  那麽，任意大小、任意维度的数组，也不过是一块和大小和维度相关的内存空间罢了。  所有动态申请的空">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-02T20:33:43.204Z">
+<meta property="og:updated_time" content="2017-11-02T21:05:44.060Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于多维数组的使用">
-<meta name="twitter:description" content="qwe">
+<meta name="twitter:title" content="关于多维数组的构造方法">
+<meta name="twitter:description" content="大家都知道 如何直接初始化一个数组。  一维数组 char a[n]; 二维数组 char a[n][m]; 三维数组 char a[n][m][p];  因为数组是需要在编译时确定大小的，并且存放在栈中，或者静态区。  那麽我们如何获得 动态数组 ？   大家也都知道 数组就是一片连续的内存空间。  那麽，任意大小、任意维度的数组，也不过是一块和大小和维度相关的内存空间罢了。  所有动态申请的空">
     
     
         
@@ -36,7 +36,7 @@
         
     
     <!-- title -->
-    <title>关于多维数组的使用</title>
+    <title>关于多维数组的构造方法</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- rss -->
@@ -83,15 +83,15 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&text=关于多维数组的使用"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的使用"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&is_video=false&description=关于多维数组的使用"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=关于多维数组的使用&body=Check out this article: http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的使用"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的使用"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的使用"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的使用"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&name=关于多维数组的使用&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&text=关于多维数组的构造方法"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的构造方法"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&is_video=false&description=关于多维数组的构造方法"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=关于多维数组的构造方法&body=Check out this article: http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的构造方法"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的构造方法"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的构造方法"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的构造方法"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&name=关于多维数组的构造方法&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -108,7 +108,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        关于多维数组的使用
+        关于多维数组的构造方法
     </h1>
 
 
@@ -130,8 +130,55 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>qwe</p>
+    <pre><code>大家都知道 如何直接初始化一个数组。
 
+一维数组 char a[n];
+二维数组 char a[n][m];
+三维数组 char a[n][m][p];
+
+因为数组是需要在编译时确定大小的，并且存放在栈中，或者静态区。
+
+那麽我们如何获得 动态数组 ？
+
+
+大家也都知道 数组就是一片连续的内存空间。
+
+那麽，任意大小、任意维度的数组，也不过是一块和大小和维度相关的内存空间罢了。
+
+所有动态申请的空间 无非就是 malloc 、 new ，在堆中开辟空间，然后获得一个返回的指针。
+
+malloc(n); 
+malloc(n * m); 
+malloc(n * m * p);
+
+但是我们无法获得数组名、无法进行下标运算获得我们想要的数组空间。
+
+因为指针本身只是代表一个地址，没有多余的类型信息，所以我们需要对指针进行类型转换，才能够随心所欲的使用。
+
+
+所以不同类型的指针，开始起作用了，int * 、 char * 、 struct *  ... ... function (*)();
+当然也包含 char (*)[] ;
+
+char (*a)[n]; 
+char (*a)[n][m]; 
+char (*a)[n][m][p]; 
+
+这些指向一个数组的指针 (*a) 便成为了我们所想要的数组名，(*a)[x][x][x] 可以进行下标运算。
+于是指针获得了进化，进化出了数组的长度信息、大小信息、类型信息。
+
+
+写在后面：
+我不知道为什麽网上有那麽多，使用多级指针数组来构造多维数组的文章，人云亦云，误人子弟，像个O哔。
+
+这并不是什麽奇技淫巧，只是基本的操作。连这样的基础操作都被埋没。
+
+知其然且知其所以然，求知若渴虚怀若谷，怀以对知识的敬畏之心自省吾身，与诸君共勉。
+
+
+感谢以下文章的指引与启迪
+
+http://www.cnblogs.com/chenyangyao/p/5222696.html
+</code></pre>
   </div>
 </article>
 
@@ -163,15 +210,15 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&text=关于多维数组的使用"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的使用"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&is_video=false&description=关于多维数组的使用"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=关于多维数组的使用&body=Check out this article: http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的使用"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的使用"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的使用"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的使用"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&name=关于多维数组的使用&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&text=关于多维数组的构造方法"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的构造方法"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&is_video=false&description=关于多维数组的构造方法"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=关于多维数组的构造方法&body=Check out this article: http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的构造方法"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的构造方法"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的构造方法"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&title=关于多维数组的构造方法"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://zhuzeyu22.github.io/2017/11/03/关于多维数组的使用/&name=关于多维数组的构造方法&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
