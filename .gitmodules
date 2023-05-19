@@ -1,0 +1,3 @@
+[submodule "themes/particle"]
+	path = document/themes/particle
+	url = https://github.com/korilin/hexo-theme-particle.git
