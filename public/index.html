@@ -135,9 +135,36 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h1 id="代码分析插件"><a href="#代码分析插件" class="headerlink" title="代码分析插件"></a>代码分析插件</h1><ul>
-<li>BundleAnalyzerPlugin</li>
+<li><p>BundleAnalyzerPlugin</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># linux</span><br><span class="line">webpack --profile --json &gt; stats.json</span><br><span class="line"></span><br><span class="line"># windows</span><br><span class="line">webpack --profile --json | Out-file &#x27;stats.json&#x27; -Encoding OEM</span><br><span class="line"></span><br><span class="line"># cli</span><br><span class="line">webpack-bundle-analyzer bundle/output/path/stats.json</span><br></pre></td></tr></table></figure></li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># linux</span><br><span class="line">webpack --profile --json &gt; stats.json</span><br><span class="line"></span><br><span class="line"># windows</span><br><span class="line">webpack --profile --json | Out-file &#x27;stats.json&#x27; -Encoding OEM</span><br><span class="line"></span><br><span class="line"># cli</span><br><span class="line">webpack-bundle-analyzer bundle/output/path/stats.json</span><br></pre></td></tr></table></figure>
+<h1 id="循环依赖分析"><a href="#循环依赖分析" class="headerlink" title="循环依赖分析"></a>循环依赖分析</h1><ul>
+<li><p>CircularDependencyPlugin</p>
+<p>usage</p>
+<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/circular-dependency-plugin">https://www.npmjs.com/package/circular-dependency-plugin</a></p>
+</li>
+</ul>
+<h1 id="清空-output-目录中内容"><a href="#清空-output-目录中内容" class="headerlink" title="清空 output 目录中内容"></a>清空 output 目录中内容</h1><ul>
+<li><p>clean-webpack-plugin</p>
+<p>usage</p>
+<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/clean-webpack-plugin">https://www.npmjs.com/package/clean-webpack-plugin</a></p>
+</li>
+</ul>
+<h1 id="复制源码文件"><a href="#复制源码文件" class="headerlink" title="复制源码文件"></a>复制源码文件</h1><ul>
+<li><p>copy-webpack-plugin</p>
+<p>usage</p>
+<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/copy-webpack-plugin">https://www.npmjs.com/package/copy-webpack-plugin</a></p>
+</li>
+</ul>
+<h1 id="内容安全-CSP-（Content-Security-Policy）"><a href="#内容安全-CSP-（Content-Security-Policy）" class="headerlink" title="内容安全 CSP （Content Security Policy）"></a>内容安全 CSP （Content Security Policy）</h1><ul>
+<li><p>CSP 定义</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy</a></p>
+</li>
+<li><p>csp-html-webpack-plugin</p>
+<p>usage</p>
+<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/csp-html-webpack-plugin">https://www.npmjs.com/package/csp-html-webpack-plugin</a></p>
+</li>
+</ul>
 
       
     </div>
