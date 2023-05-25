@@ -73,6 +73,126 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-markdown" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/25/markdown/" class="article-date">
+  <time class="dt-published" datetime="2023-05-25T02:20:32.000Z" itemprop="datePublished">2023-05-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/05/25/markdown/">markdown</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://www.markdownguide.org/basic-syntax/">https://www.markdownguide.org/basic-syntax/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/05/25/markdown/" data-id="cli2id8n800007gvr7qyzbx1p" data-title="markdown" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-webpack-plugins" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/25/webpack-plugins/" class="article-date">
+  <time class="dt-published" datetime="2023-05-25T02:16:19.000Z" itemprop="datePublished">2023-05-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/05/25/webpack-plugins/">webpack-plugins</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="代码分析插件"><a href="#代码分析插件" class="headerlink" title="代码分析插件"></a>代码分析插件</h1><ul>
+<li>BundleAnalyzerPlugin</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># linux</span><br><span class="line">webpack --profile --json &gt; stats.json</span><br><span class="line"></span><br><span class="line"># windows</span><br><span class="line">webpack --profile --json | Out-file &#x27;stats.json&#x27; -Encoding OEM</span><br><span class="line"></span><br><span class="line"># cli</span><br><span class="line">webpack-bundle-analyzer bundle/output/path/stats.json</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/05/25/webpack-plugins/" data-id="cli2id8nd00027gvrgq5fh446" data-title="webpack-plugins" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/19/java/" class="article-date">
+  <time class="dt-published" datetime="2023-05-19T08:20:11.000Z" itemprop="datePublished">2023-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/05/19/java/">java</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="java-for-debian"><a href="#java-for-debian" class="headerlink" title="java for debian"></a>java for debian</h1><p>sudo apt-get install default-jre</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/05/19/java/" data-id="cli2id8nb00017gvr1h9shiv7" data-title="java" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-nexus" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/05/19/nexus/" class="article-date">
@@ -95,7 +215,9 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8081:8081 --name nexus sonatype/nexus3</span><br></pre></td></tr></table></figure>
+        <h1 id="deploy-for-docker"><a href="#deploy-for-docker" class="headerlink" title="deploy for docker"></a>deploy for docker</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8081:8081 --name nexus sonatype/nexus3</span><br></pre></td></tr></table></figure>
+
+<h1 id="deploy-for-debian"><a href="#deploy-for-debian" class="headerlink" title="deploy for debian"></a>deploy for debian</h1><p>wget <a target="_blank" rel="noopener" href="https://sonatype-download.global.ssl.fastly.net/repository/downloads-prod-group/3/nexus-3.35.0-02-unix.tar.gz">https://sonatype-download.global.ssl.fastly.net/repository/downloads-prod-group/3/nexus-3.35.0-02-unix.tar.gz</a></p>
 
       
     </div>
@@ -235,15 +357,23 @@
       <ul>
         
           <li>
+            <a href="/2023/05/25/markdown/">markdown</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/25/webpack-plugins/">webpack-plugins</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/19/java/">java</a>
+          </li>
+        
+          <li>
             <a href="/2023/05/19/nexus/">nexus</a>
           </li>
         
           <li>
             <a href="/2023/05/19/docker/">docker</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/19/hello-world/">Hello World</a>
           </li>
         
       </ul>
