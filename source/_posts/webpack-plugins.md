@@ -99,10 +99,38 @@ tags:
 
   https://www.npmjs.com/package/fantasticon
 
-#
+# 使用独立进程进行 TS 类型检查
 
 - fork-ts-checker-webpack-plugin
 
   usage
 
   https://www.npmjs.com/package/fork-ts-checker-webpack-plugin
+
+---
+
+# 将 bundle 打包成 H5 文件
+
+- html-webpack-plugin
+
+  uasage
+
+  https://www.npmjs.com/package/html-webpack-plugin
+
+---
+
+# 图像压缩插件
+
+- image-minimizer-webpack-plugin
+
+  usage
+
+  https://www.npmjs.com/package/image-minimizer-webpack-plugin
+
+# css 压缩插件
+
+- mini-css-extract-plugin
+
+  usage
+
+  https://www.npmjs.com/package/mini-css-extract-plugin
