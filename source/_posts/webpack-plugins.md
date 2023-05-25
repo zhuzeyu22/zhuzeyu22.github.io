@@ -4,6 +4,8 @@ date: 2023-05-25 10:16:19
 tags:
 ---
 
+---
+
 # 代码分析插件
 
 - BundleAnalyzerPlugin
@@ -19,6 +21,8 @@ tags:
   webpack-bundle-analyzer bundle/output/path/stats.json
   ```
 
+---
+
 # 循环依赖分析
 
 - CircularDependencyPlugin
@@ -26,6 +30,8 @@ tags:
   usage
 
   https://www.npmjs.com/package/circular-dependency-plugin
+
+---
 
 # 清空 output 目录中内容
 
@@ -35,6 +41,8 @@ tags:
 
   https://www.npmjs.com/package/clean-webpack-plugin
 
+---
+
 # 复制源码文件
 
 - copy-webpack-plugin
@@ -42,6 +50,8 @@ tags:
   usage
 
   https://www.npmjs.com/package/copy-webpack-plugin
+
+---
 
 # 内容安全 CSP （Content Security Policy）
 
@@ -54,3 +64,45 @@ tags:
   usage
 
   https://www.npmjs.com/package/csp-html-webpack-plugin
+
+---
+
+# css 优化插件
+
+- css-minimizer-webpack-plugin
+
+  usage
+
+  https://www.npmjs.com/package/css-minimizer-webpack-plugin
+
+---
+
+# 编译和优化 插件
+
+比 babel-loader/ts-loader 更快
+
+比 Terser 更小
+
+- esbuild-loader
+
+  usage
+
+  https://www.npmjs.com/package/esbuild-loader
+
+---
+
+# 字体图标插件
+
+- fantasticon
+
+  usage
+
+  https://www.npmjs.com/package/fantasticon
+
+#
+
+- fork-ts-checker-webpack-plugin
+
+  usage
+
+  https://www.npmjs.com/package/fork-ts-checker-webpack-plugin
