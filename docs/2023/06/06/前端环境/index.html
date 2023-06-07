@@ -6,15 +6,15 @@
   
   <title>前端环境 | Document</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="高级用法参考developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web  模块化使用 yarn 配置 workspace 1234e.g.├───modules│ ├───memo-a│ └───memo-b  - 安装某个模块的依赖  yarn workspace memo-a add .&#x2F;modules&#x2F;memo-b  - 安装到工作空间  yarn">
+  <meta name="description" content="高级用法参考developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web  模块化使用 yarn 配置 workspace 1234e.g.├───modules│ ├───memo-a│ └───memo-b   安装某个模块的依赖 yarn workspace memo-a add .&#x2F;modules&#x2F;memo-b  安装到工作空间">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端环境">
 <meta property="og:url" content="https://zhuzeyu22.github.io/2023/06/06/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="Document">
-<meta property="og:description" content="高级用法参考developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web  模块化使用 yarn 配置 workspace 1234e.g.├───modules│ ├───memo-a│ └───memo-b  - 安装某个模块的依赖  yarn workspace memo-a add .&#x2F;modules&#x2F;memo-b  - 安装到工作空间  yarn">
+<meta property="og:description" content="高级用法参考developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web  模块化使用 yarn 配置 workspace 1234e.g.├───modules│ ├───memo-a│ └───memo-b   安装某个模块的依赖 yarn workspace memo-a add .&#x2F;modules&#x2F;memo-b  安装到工作空间">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-06T07:27:44.000Z">
-<meta property="article:modified_time" content="2023-06-06T09:05:07.489Z">
+<meta property="article:modified_time" content="2023-06-07T05:39:59.043Z">
 <meta property="article:author" content="zhuzeyu22">
 <meta name="twitter:card" content="summary">
   
@@ -102,14 +102,20 @@
 <h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><p>使用 yarn 配置 workspace</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">e.g.</span><br><span class="line">├───modules</span><br><span class="line">│ ├───memo-a</span><br><span class="line">│ └───memo-b</span><br></pre></td></tr></table></figure>
 
-<pre><code>- 安装某个模块的依赖
+<ul>
+<li><p>安装某个模块的依赖</p>
+<p>yarn workspace memo-a add .&#x2F;modules&#x2F;memo-b</p>
+</li>
+<li><p>安装到工作空间</p>
+<p>yarn add cross-env -W</p>
+</li>
+</ul>
+<hr>
+<p>有工作空间之后不需要使用 yarn link 了</p>
+<p>yarn install 时候会自动构建链接</p>
+<!-- - 使用 yarn link 做模块链接
 
-yarn workspace memo-a add ./modules/memo-b
-
-- 安装到工作空间
-
-yarn add cross-env -W
-</code></pre>
+    yarn link --cwd .\src\modules\memo-a\ -->
 
       
     </div>
@@ -123,6 +129,15 @@ yarn add cross-env -W
   
     
 <nav id="article-nav">
+  
+    <a href="/2023/06/06/%E5%8E%9F%E5%9E%8B%E9%93%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          原型链
+        
+      </div>
+    </a>
   
   
     <a href="/2023/06/02/TypeScript/" id="article-nav-older" class="article-nav-link-wrap">
@@ -165,6 +180,10 @@ yarn add cross-env -W
       <ul>
         
           <li>
+            <a href="/2023/06/06/%E5%8E%9F%E5%9E%8B%E9%93%BE/">原型链</a>
+          </li>
+        
+          <li>
             <a href="/2023/06/06/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83/">前端环境</a>
           </li>
         
@@ -178,10 +197,6 @@ yarn add cross-env -W
         
           <li>
             <a href="/2023/06/01/gulp/">gulp</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/31/pnpm/">pnpm</a>
           </li>
         
       </ul>
