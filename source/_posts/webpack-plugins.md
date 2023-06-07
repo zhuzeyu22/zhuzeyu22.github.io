@@ -109,6 +109,12 @@ tags:
 
 ---
 
+# webpack 配置参考
+
+https://webpack.js.org/configuration/
+
+---
+
 # 将 bundle 打包成 H5 文件
 
 - html-webpack-plugin
