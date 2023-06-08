@@ -6,6 +6,8 @@ tags:
 
 # [依赖配置 npmrc](https://pnpm.io/zh/npmrc)
 
+[npm](https://docs.npmjs.com/cli/v6/configuring-npm/package-json)
+
 - 处理依赖不同版本的包时
 
   ```
