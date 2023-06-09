@@ -73,6 +73,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-decorator" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/30/decorator/" class="article-date">
+  <time class="dt-published" datetime="2023-05-30T02:16:23.000Z" itemprop="datePublished">2023-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/05/30/decorator/">decorator</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="TS-decorator"><a href="#TS-decorator" class="headerlink" title="TS decorator"></a>TS decorator</h1><ul>
+<li><p>Ref: <a target="_blank" rel="noopener" href="https://www.tslang.cn/docs/handbook/decorators.html">https://www.tslang.cn/docs/handbook/decorators.html</a></p>
+</li>
+<li><p>虽然是实验特性，鉴于 python、 java、lua 里面都有类似的东西，以后必然 TS 会支持。</p>
+</li>
+<li><p>装饰器是一种特殊类型的声明，它能够被附加到类声明，方法， 访问符，属性或参数上。</p>
+</li>
+</ul>
+<hr>
+<h2 id="装饰器工厂"><a href="#装饰器工厂" class="headerlink" title="装饰器工厂"></a>装饰器工厂</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">color</span>(<span class="params">value: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">  <span class="comment">// 这是一个装饰器工厂</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">target</span>) &#123;</span><br><span class="line">    <span class="comment">//  这是装饰器</span></span><br><span class="line">    <span class="comment">// do something with &quot;target&quot; and &quot;value&quot;...</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="装饰器组合"><a href="#装饰器组合" class="headerlink" title="装饰器组合"></a>装饰器组合</h2><ul>
+<li>书写在同一行上：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@f @g x</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>书写在多行上：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@f</span><br><span class="line">@g</span><br><span class="line">x</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">f</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;f(): evaluated&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span></span><br><span class="line"><span class="params">    target,</span></span><br><span class="line"><span class="params">    propertyKey: <span class="built_in">string</span>,</span></span><br><span class="line"><span class="params">    descriptor: PropertyDescriptor</span></span><br><span class="line"><span class="params">  </span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;f(): called&quot;</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">g</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;g(): evaluated&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span></span><br><span class="line"><span class="params">    target,</span></span><br><span class="line"><span class="params">    propertyKey: <span class="built_in">string</span>,</span></span><br><span class="line"><span class="params">    descriptor: PropertyDescriptor</span></span><br><span class="line"><span class="params">  </span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;g(): called&quot;</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span> &#123;</span><br><span class="line">  <span class="meta">@f</span>()</span><br><span class="line">  <span class="meta">@g</span>()</span><br><span class="line">  <span class="title function_">method</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f(): evaluated</span><br><span class="line">g(): evaluated</span><br><span class="line">g(): called</span><br><span class="line">f(): called</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="装饰器求值"><a href="#装饰器求值" class="headerlink" title="装饰器求值"></a>装饰器求值</h2><ol>
+<li>参数装饰器，然后依次是方法装饰器，访问符装饰器，或属性装饰器应用到每个实例成员。</li>
+<li>参数装饰器，然后依次是方法装饰器，访问符装饰器，或属性装饰器应用到每个静态成员。</li>
+<li>参数装饰器应用到构造函数。</li>
+<li>类装饰器应用到类。</li>
+</ol>
+<hr>
+<h2 id="类装饰器"><a href="#类装饰器" class="headerlink" title="类装饰器"></a>类装饰器</h2><p>&#x2F;&#x2F; todo</p>
+<hr>
+<h2 id="方法装饰器"><a href="#方法装饰器" class="headerlink" title="方法装饰器"></a>方法装饰器</h2><p>&#x2F;&#x2F; todo</p>
+<hr>
+<h2 id="访问器装饰器"><a href="#访问器装饰器" class="headerlink" title="访问器装饰器"></a>访问器装饰器</h2><p>&#x2F;&#x2F; todo</p>
+<hr>
+<h2 id="属性装饰器"><a href="#属性装饰器" class="headerlink" title="属性装饰器"></a>属性装饰器</h2><p>&#x2F;&#x2F; todo</p>
+<hr>
+<h2 id="参数装饰器"><a href="#参数装饰器" class="headerlink" title="参数装饰器"></a>参数装饰器</h2><p>&#x2F;&#x2F; todo</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/05/30/decorator/" data-id="cli9nyznh00008cvr6x3454g3" data-title="decorator" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-markdown" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/05/25/markdown/" class="article-date">
@@ -445,6 +527,10 @@
       <ul>
         
           <li>
+            <a href="/2023/06/08/jest/">jest</a>
+          </li>
+        
+          <li>
             <a href="/2023/06/06/%E5%8E%9F%E5%9E%8B%E9%93%BE/">原型链</a>
           </li>
         
@@ -458,10 +544,6 @@
         
           <li>
             <a href="/2023/06/01/ninja/">ninja</a>
-          </li>
-        
-          <li>
-            <a href="/2023/06/01/gulp/">gulp</a>
           </li>
         
       </ul>
