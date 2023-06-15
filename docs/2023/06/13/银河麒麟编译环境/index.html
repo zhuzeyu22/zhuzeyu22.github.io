@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>前端环境 | Document</title>
+  <title>银河麒麟编译环境 | Document</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="高级用法参考developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Webhttps:&#x2F;&#x2F;github.com&#x2F;zhuzeyu22&#x2F;ts&#x2F;blob&#x2F;master&#x2F;package.json  monoropo最佳实践  lerna  Turborepo (pipline)    依赖包typescript@types&#x2F;nodetsconfig-pat">
+  <meta name="description" content="关闭权限管理模块 getstatus setstatus https:&#x2F;&#x2F;blog.csdn.net&#x2F;Sonsay&#x2F;article&#x2F;details&#x2F;118630433">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端环境">
-<meta property="og:url" content="https://zhuzeyu22.github.io/2023/06/06/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:title" content="银河麒麟编译环境">
+<meta property="og:url" content="https://zhuzeyu22.github.io/2023/06/13/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="Document">
-<meta property="og:description" content="高级用法参考developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Webhttps:&#x2F;&#x2F;github.com&#x2F;zhuzeyu22&#x2F;ts&#x2F;blob&#x2F;master&#x2F;package.json  monoropo最佳实践  lerna  Turborepo (pipline)    依赖包typescript@types&#x2F;nodetsconfig-pat">
+<meta property="og:description" content="关闭权限管理模块 getstatus setstatus https:&#x2F;&#x2F;blog.csdn.net&#x2F;Sonsay&#x2F;article&#x2F;details&#x2F;118630433">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-06T07:27:44.000Z">
-<meta property="article:modified_time" content="2023-06-08T09:25:08.126Z">
+<meta property="article:published_time" content="2023-06-13T02:16:28.000Z">
+<meta property="article:modified_time" content="2023-06-13T02:57:50.933Z">
 <meta property="article:author" content="zhuzeyu22">
 <meta name="twitter:card" content="summary">
   
@@ -75,10 +75,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-前端环境" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-银河麒麟编译环境" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/06/06/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83/" class="article-date">
-  <time class="dt-published" datetime="2023-06-06T07:27:44.000Z" itemprop="datePublished">2023-06-06</time>
+    <a href="/2023/06/13/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/" class="article-date">
+  <time class="dt-published" datetime="2023-06-13T02:16:28.000Z" itemprop="datePublished">2023-06-13</time>
 </a>
     
   </div>
@@ -89,7 +89,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      前端环境
+      银河麒麟编译环境
     </h1>
   
 
@@ -97,52 +97,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="高级用法参考"><a href="#高级用法参考" class="headerlink" title="高级用法参考"></a>高级用法参考</h1><p>developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web<br><a target="_blank" rel="noopener" href="https://github.com/zhuzeyu22/ts/blob/master/package.json">https://github.com/zhuzeyu22/ts/blob/master/package.json</a></p>
-<hr>
-<h1 id="monoropo"><a href="#monoropo" class="headerlink" title="monoropo"></a>monoropo</h1><p><a target="_blank" rel="noopener" href="https://github.com/zhuzeyu22/ts/blob/master/package.json">最佳实践</a></p>
-<ul>
-<li><p>lerna</p>
-</li>
-<li><p>Turborepo (pipline)</p>
-</li>
-</ul>
-<hr>
-<h1 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h1><p>typescript<br>@types&#x2F;node<br>tsconfig-paths-webpack-plugin<br>ts-loader<br>node-loader<br>esbuild-loader</p>
-<hr>
-<h1 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h1><p>使用 webpack 粘合各种需要</p>
-<p>tsc 支持 workspace 顶层配置一个就可以了</p>
-<p>esbuild</p>
-<p>gulp 加速编译</p>
-<hr>
-<h1 id="类型检查"><a href="#类型检查" class="headerlink" title="类型检查"></a>类型检查</h1><p>tsc -noEmit</p>
-<hr>
-<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><p>使用 yarn 配置 workspace</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">e.g.</span><br><span class="line">├───modules</span><br><span class="line">│ ├───memo-a</span><br><span class="line">│ └───memo-b</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>安装某个模块的依赖</p>
-<p>yarn workspace memo-a add .&#x2F;modules&#x2F;memo-b</p>
-</li>
-<li><p>安装到工作空间</p>
-<p>yarn add cross-env -W</p>
-</li>
-</ul>
-<hr>
-<p>有工作空间之后不需要使用 yarn link 了</p>
-<p>yarn install 时候会自动构建链接</p>
-<ul>
-<li><p>yarn 更新</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn set version stable</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>yarn add module-alias</p>
-<!-- - 使用 yarn link 做模块链接
-
-    yarn link --cwd .\src\modules\memo-a\ -->
+        <h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>关闭权限管理模块</p>
+<p>getstatus</p>
+<p>setstatus</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Sonsay/article/details/118630433">https://blog.csdn.net/Sonsay/article/details/118630433</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/06/06/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83/" data-id="clik34cfc000308vrept284pd" data-title="前端环境" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://zhuzeyu22.github.io/2023/06/13/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/" data-id="cliwi3qap0001akvrcpcn0ijj" data-title="银河麒麟编译环境" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -152,19 +115,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/06/06/%E5%8E%9F%E5%9E%8B%E9%93%BE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          原型链
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/06/02/TypeScript/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/06/13/Ninjia/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">TypeScript</div>
+      <div class="article-nav-title">Ninjia</div>
     </a>
   
 </nav>
