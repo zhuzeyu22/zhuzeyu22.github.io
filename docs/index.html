@@ -341,7 +341,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="高级用法参考"><a href="#高级用法参考" class="headerlink" title="高级用法参考"></a>高级用法参考</h1><p>developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web<br><a target="_blank" rel="noopener" href="https://github.com/zhuzeyu22/ts/blob/master/package.json">https://github.com/zhuzeyu22/ts/blob/master/package.json</a></p>
+        <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/zhuzeyu22/ts/blob/master/package.json">https://github.com/zhuzeyu22/ts/blob/master/package.json</a></p>
 <hr>
 <h1 id="monoropo"><a href="#monoropo" class="headerlink" title="monoropo"></a>monoropo</h1><p><a target="_blank" rel="noopener" href="https://github.com/zhuzeyu22/ts/blob/master/package.json">最佳实践</a></p>
 <ul>
@@ -351,7 +352,18 @@
 </li>
 </ul>
 <hr>
-<h1 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h1><p>typescript<br>@types&#x2F;node<br>tsconfig-paths-webpack-plugin<br>ts-loader<br>node-loader<br>esbuild-loader</p>
+<h1 id="全局依赖"><a href="#全局依赖" class="headerlink" title="全局依赖"></a>全局依赖</h1><ul>
+<li>yarn</li>
+<li>webpack</li>
+<li>webpack-cli</li>
+<li>@webpack-cli&#x2F;generators</li>
+<li>typescript</li>
+<li>@types&#x2F;node</li>
+<li>tsconfig-paths-webpack-plugin</li>
+<li>ts-loader</li>
+<li>node-loader</li>
+<li>esbuild-loader</li>
+</ul>
 <hr>
 <h1 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h1><p>使用 webpack 粘合各种需要</p>
 <p>tsc 支持 workspace 顶层配置一个就可以了</p>
@@ -361,6 +373,7 @@
 <h1 id="类型检查"><a href="#类型检查" class="headerlink" title="类型检查"></a>类型检查</h1><p>tsc -noEmit</p>
 <hr>
 <h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><p>使用 yarn 配置 workspace</p>
+<p><a target="_blank" rel="noopener" href="https://yarnpkg.com/getting-started/install">https://yarnpkg.com/getting-started/install</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">e.g.</span><br><span class="line">├───modules</span><br><span class="line">│ ├───memo-a</span><br><span class="line">│ └───memo-b</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -382,6 +395,9 @@
 <!-- - 使用 yarn link 做模块链接
 
     yarn link --cwd .\src\modules\memo-a\ -->
+
+<hr>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>使用 (jsdoc)[<a target="_blank" rel="noopener" href="https://www.jsdoc.com.cn/]">https://www.jsdoc.com.cn/]</a></p>
 
       
     </div>
