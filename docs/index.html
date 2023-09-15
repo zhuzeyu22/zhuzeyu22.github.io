@@ -73,6 +73,85 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-nginx-反向代理实现上网" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/16/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E4%B8%8A%E7%BD%91/" class="article-date">
+  <time class="dt-published" datetime="2023-08-16T02:07:07.000Z" itemprop="datePublished">2023-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/08/16/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E4%B8%8A%E7%BD%91/">nginx 反向代理实现上网</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="socks5-全流量通道转发"><a href="#socks5-全流量通道转发" class="headerlink" title="socks5 全流量通道转发"></a>socks5 全流量通道转发</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/08/16/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E4%B8%8A%E7%BD%91/" data-id="clmkcmmru0001pgvrhn337g08" data-title="nginx 反向代理实现上网" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-go-web-server-framework-调研" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/11/go-web-server-framework-%E8%B0%83%E7%A0%94/" class="article-date">
+  <time class="dt-published" datetime="2023-08-11T08:19:36.000Z" itemprop="datePublished">2023-08-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/08/11/go-web-server-framework-%E8%B0%83%E7%A0%94/">go web server framework 调研</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="iris"><a href="#iris" class="headerlink" title="iris"></a>iris</h1><ul>
+<li>类 koa 语法，没有注解</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/08/11/go-web-server-framework-%E8%B0%83%E7%A0%94/" data-id="clmkcmmrq0000pgvr6dxj32mj" data-title="go web server framework 调研" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-madway" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/08/08/madway/" class="article-date">
@@ -418,94 +497,6 @@
 
 
   
-    <article id="post-electron-交叉编译" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/06/13/electron-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" class="article-date">
-  <time class="dt-published" datetime="2023-06-13T01:44:50.000Z" itemprop="datePublished">2023-06-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/13/electron-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/">electron 交叉编译</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="构建说明"><a href="#构建说明" class="headerlink" title="构建说明"></a>构建说明</h1><p><a target="_blank" rel="noopener" href="https://www.electronjs.org/zh/docs/latest/development/build-instructions-gn">https://www.electronjs.org/zh/docs/latest/development/build-instructions-gn</a></p>
-<p>使用 <a target="_blank" rel="noopener" href="https://gn.googlesource.com/gn">GN</a> 生成项目，并用 <a target="_blank" rel="noopener" href="https://ninja-build.org/">Ninja</a> 完成构建</p>
-<hr>
-<hr>
-<h1 id="安装-depot-tools"><a href="#安装-depot-tools" class="headerlink" title="安装 depot_tools"></a>安装 depot_tools</h1><p>nonono 这个不好用</p>
-<p>这是一个用于获取 Chromium，及其相关依赖工具。</p>
-<hr>
-<hr>
-<h1 id="使用-electron-builder"><a href="#使用-electron-builder" class="headerlink" title="使用 electron-builder"></a>使用 electron-builder</h1><p>一般不使用交叉编译，以来的交叉编译库太麻烦了，先从简单的开始。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/06/13/electron-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" data-id="cliwi3qas0003akvrajhrgvb3" data-title="electron 交叉编译" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-jest" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/06/08/jest/" class="article-date">
-  <time class="dt-published" datetime="2023-06-08T02:41:45.000Z" itemprop="datePublished">2023-06-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/08/jest/">jest</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="jest-前端测试框架"><a href="#jest-前端测试框架" class="headerlink" title="jest 前端测试框架"></a>jest 前端测试框架</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/ts-jest">使用 TS</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/06/08/jest/" data-id="clinuare80000s8vr55kghu49" data-title="jest" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -542,6 +533,14 @@
       <ul>
         
           <li>
+            <a href="/2023/08/16/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E4%B8%8A%E7%BD%91/">nginx 反向代理实现上网</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/11/go-web-server-framework-%E8%B0%83%E7%A0%94/">go web server framework 调研</a>
+          </li>
+        
+          <li>
             <a href="/2023/08/08/madway/">midwayjs</a>
           </li>
         
@@ -551,14 +550,6 @@
         
           <li>
             <a href="/2023/07/19/Koa-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Koa 环境搭建</a>
-          </li>
-        
-          <li>
-            <a href="/2023/07/10/UI-%E4%B8%BB%E9%A2%98/">UI 主题</a>
-          </li>
-        
-          <li>
-            <a href="/2023/07/07/git-%E4%BB%A3%E7%90%86/">git 代理</a>
           </li>
         
       </ul>
