@@ -73,6 +73,262 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jenkins" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/02/jenkins/" class="article-date">
+  <time class="dt-published" datetime="2024-02-02T01:26:55.000Z" itemprop="datePublished">2024-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/02/jenkins/">jenkins</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="流水线语法"><a href="#流水线语法" class="headerlink" title="流水线语法"></a>流水线语法</h2><p><a target="_blank" rel="noopener" href="https://www.jenkins.io/zh/doc/book/pipeline/syntax/">https://www.jenkins.io/zh/doc/book/pipeline/syntax/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2024/02/02/jenkins/" data-id="clty5vo4h0000pwvr88tj42r2" data-title="jenkins" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-编码规范" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/26/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" class="article-date">
+  <time class="dt-published" datetime="2023-12-26T05:18:51.000Z" itemprop="datePublished">2023-12-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/12/26/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">编码规范</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="测试驱动开发"><a href="#测试驱动开发" class="headerlink" title="测试驱动开发"></a>测试驱动开发</h1><ul>
+<li>先制定测试用例，要求全部功能点覆盖率 100%</li>
+</ul>
+<hr>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><ul>
+<li>所有公共组件的功能接口要求编写 TSDoc&#x2F;JsDoc&#x2F;Doxygen 风格的代码注释</li>
+</ul>
+<hr>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
+<li>一个函数只做一件事</li>
+<li>写代码就像写书一样，主流程就像是目录，点到函数里面才是具体的功能实现</li>
+</ul>
+<hr>
+<h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><ul>
+<li>所有功能模块完全独立，禁止互相依赖</li>
+<li>不同模块采取统一的命名方式，导出的变量名称必须符合命名规范并且完全不同</li>
+</ul>
+<hr>
+<h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><ul>
+<li>通用功能提取到公共组件库内，以便达到不同模块编码风格的一致性</li>
+</ul>
+<hr>
+<h1 id="公共组件库与开放接口"><a href="#公共组件库与开放接口" class="headerlink" title="公共组件库与开放接口"></a>公共组件库与开放接口</h1><h3 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h3><ul>
+<li>两个地方复用的代码直接拷贝</li>
+<li>三个及以上地方复用的代码抽象到公共组件库中</li>
+<li>新增的公共组件库代码需要发起代码审查会议，经过评审</li>
+</ul>
+<h3 id="变更"><a href="#变更" class="headerlink" title="变更"></a>变更</h3><ul>
+<li>任何已完成的功能禁止变更，只允许复用、新增、废弃</li>
+</ul>
+<h3 id="废弃"><a href="#废弃" class="headerlink" title="废弃"></a>废弃</h3><ul>
+<li>所有使用该功能点的代码都完成替换后才允许进行废弃</li>
+<li>废弃前应先替换成抛出异常的代码进行测试</li>
+</ul>
+<hr>
+<h1 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h1><ul>
+<li>依赖要求在编译配置中指定明确的版本，禁止自动升级</li>
+</ul>
+<hr>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><ul>
+<li>数据要求使用明确的数据类型</li>
+</ul>
+<hr>
+<h1 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h1><ul>
+<li>交互输入框要求进行严格的数据类型校验</li>
+<li>文本要求使用统一的接口进行多语言处理</li>
+</ul>
+<hr>
+<h1 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h1><ul>
+<li>要求使用支持跨平台的库函数进行路径处理，禁止拼接无法兼容多种平台的路径</li>
+</ul>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/12/26/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" data-id="clty5vo4n0004pwvr5vch8234" data-title="编码规范" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-lerna" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/20/lerna/" class="article-date">
+  <time class="dt-published" datetime="2023-12-20T02:48:18.000Z" itemprop="datePublished">2023-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/12/20/lerna/">lerna</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="init"><a href="#init" class="headerlink" title="init"></a>init</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm -g i lerna </span><br><span class="line">lerna init</span><br><span class="line">npm i</span><br><span class="line">lerna creat package-1 -y</span><br></pre></td></tr></table></figure>
+
+<h1 id="vscode-extension"><a href="#vscode-extension" class="headerlink" title="vscode extension"></a>vscode extension</h1><p>Nx</p>
+<h1 id="有用的包"><a href="#有用的包" class="headerlink" title="有用的包"></a>有用的包</h1><p>├── @babel&#x2F;<a href="mailto:&#x63;&#x6c;&#105;&#x40;&#55;&#x2e;&#x32;&#x33;&#46;&#52;">&#x63;&#x6c;&#105;&#x40;&#55;&#x2e;&#x32;&#x33;&#46;&#52;</a><br>├── @babel&#x2F;<a href="mailto:&#99;&#x6f;&#x72;&#x65;&#64;&#55;&#x2e;&#x32;&#51;&#x2e;&#x36;">&#99;&#x6f;&#x72;&#x65;&#64;&#55;&#x2e;&#x32;&#51;&#x2e;&#x36;</a><br>├── <a href="mailto:&#99;&#x6f;&#x72;&#101;&#112;&#x61;&#x63;&#x6b;&#x40;&#x30;&#x2e;&#50;&#48;&#46;&#48;">&#99;&#x6f;&#x72;&#101;&#112;&#x61;&#x63;&#x6b;&#x40;&#x30;&#x2e;&#50;&#48;&#46;&#48;</a><br>├── <a href="mailto:&#x6c;&#x65;&#114;&#x6e;&#97;&#64;&#56;&#x2e;&#48;&#x2e;&#49;">&#x6c;&#x65;&#114;&#x6e;&#97;&#64;&#56;&#x2e;&#48;&#x2e;&#49;</a><br>├── <a href="mailto:&#x6e;&#112;&#x6d;&#64;&#49;&#x30;&#46;&#x31;&#46;&#x30;">&#x6e;&#112;&#x6d;&#64;&#49;&#x30;&#46;&#x31;&#46;&#x30;</a><br>├── <a href="mailto:&#116;&#x79;&#x70;&#101;&#x73;&#99;&#114;&#x69;&#112;&#x74;&#x40;&#x35;&#46;&#x33;&#x2e;&#x33;">&#116;&#x79;&#x70;&#101;&#x73;&#99;&#114;&#x69;&#112;&#x74;&#x40;&#x35;&#46;&#x33;&#x2e;&#x33;</a><br>├── <a href="mailto:&#119;&#101;&#98;&#x70;&#x61;&#x63;&#x6b;&#x2d;&#99;&#108;&#105;&#x40;&#53;&#x2e;&#x31;&#46;&#x34;">&#119;&#101;&#98;&#x70;&#x61;&#x63;&#x6b;&#x2d;&#99;&#108;&#105;&#x40;&#53;&#x2e;&#x31;&#46;&#x34;</a><br>└── <a href="mailto:&#x77;&#101;&#x62;&#112;&#97;&#99;&#x6b;&#64;&#x35;&#46;&#56;&#57;&#x2e;&#48;">&#x77;&#101;&#x62;&#112;&#97;&#99;&#x6b;&#64;&#x35;&#46;&#56;&#57;&#x2e;&#48;</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/12/20/lerna/" data-id="clty5vo4n0003pwvr1jzadugc" data-title="lerna" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-opensumi-结构详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/28/opensumi-%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2023-11-28T01:33:55.000Z" itemprop="datePublished">2023-11-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/11/28/opensumi-%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/">opensumi 结构详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>两个入口点<br>extensionEntry<br>extensionWorkerEntry</p>
+<p>由 MainApp 启动<br>ElectronMainApp</p>
+<p>MainApp 包含<br>codeWindows<br>injector<br>modules<br>parsedArgs</p>
+<p>注册 api<br>injectLifecycleApi</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 很优秀的类型推断，判断 T 是推断类型 R 的实例类型</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">type</span> <span class="title class_">TokenResult</span>&lt;T <span class="keyword">extends</span> <span class="title class_">Token</span>&gt; = T <span class="keyword">extends</span> <span class="title class_">ConstructorOf</span>&lt;infer R&gt; ? R : <span class="built_in">any</span>;</span><br></pre></td></tr></table></figure>
+
+<p>初始化的时候发出事件<br>ActivationEventServiceImpl</p>
+<p>export class BasicModule {<br>  @Autowired(INJECTOR_TOKEN)<br>  protected injector: Injector;<br>  providers?: Provider[];<br>  backServices?: BackService[];<br>  frontServices?: FrontService[];<br>  contributionProvider: Domain | Domain[];<br>}</p>
+<h1 id="配置项注册"><a href="#配置项注册" class="headerlink" title="配置项注册"></a>配置项注册</h1><p>this.schemaRegistry.registerSchema</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/11/28/opensumi-%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/" data-id="clty5vo4m0002pwvr61cphihv" data-title="opensumi 结构详解" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-LSP语言服务器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-date">
+  <time class="dt-published" datetime="2023-11-24T08:51:42.000Z" itemprop="datePublished">2023-11-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/">LSP语言服务器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><h1 id="-2"><a href="#-2" class="headerlink" title=""></a></h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/" data-id="clty5vo4l0001pwvrgwv53b9v" data-title="LSP语言服务器" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-node-pty" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/10/12/node-pty/" class="article-date">
@@ -274,232 +530,11 @@
 
 
   
-    <article id="post-Koa-环境搭建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/07/19/Koa-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time class="dt-published" datetime="2023-07-19T02:50:00.000Z" itemprop="datePublished">2023-07-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/07/19/Koa-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Koa 环境搭建</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h1><p>webpack init</p>
-<p>yarn add -D @types&#x2F;node webpack-dev-middleware webpack-hot-middleware @types&#x2F;webpack-hot-middleware</p>
-<p>yarn add koa koa-body koa-logger koa-router koa-static koa-views</p>
-<p>yarn add -D @types&#x2F;koa @types&#x2F;koa-logger @types&#x2F;koa-router @types&#x2F;koa-static @types&#x2F;koa-views</p>
-<h1 id="jest-or-mocha"><a href="#jest-or-mocha" class="headerlink" title="jest or mocha"></a>jest or mocha</h1><p><a target="_blank" rel="noopener" href="https://medium.com/scrum-ai/4-testing-koa-server-with-jest-week-5-8e980cd30527">https://medium.com/scrum-ai/4-testing-koa-server-with-jest-week-5-8e980cd30527</a></p>
-<h1 id="example"><a href="#example" class="headerlink" title="example"></a>example</h1><ul>
-<li><p>官方例子<br><a target="_blank" rel="noopener" href="https://github.com/koajs/examples">https://github.com/koajs/examples</a></p>
-</li>
-<li><p>ts 模板<br><a target="_blank" rel="noopener" href="https://github.com/luciozhang/koa-ts-template">https://github.com/luciozhang/koa-ts-template</a></p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/07/19/Koa-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-id="cll1n5o900000eovr3c77bx2n" data-title="Koa 环境搭建" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-UI-主题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/07/10/UI-%E4%B8%BB%E9%A2%98/" class="article-date">
-  <time class="dt-published" datetime="2023-07-10T05:31:00.000Z" itemprop="datePublished">2023-07-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/07/10/UI-%E4%B8%BB%E9%A2%98/">UI 主题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="UI-套件"><a href="#UI-套件" class="headerlink" title="UI 套件"></a>UI 套件</h1><p><a target="_blank" rel="noopener" href="https://rebassjs.org/getting-started">https://rebassjs.org/getting-started</a></p>
-<h1 id="项目管理主题"><a href="#项目管理主题" class="headerlink" title="项目管理主题"></a>项目管理主题</h1><p><a target="_blank" rel="noopener" href="https://open.cruip.com/">https://open.cruip.com/</a></p>
-<h1 id="UI-套件-1"><a href="#UI-套件-1" class="headerlink" title="UI 套件"></a>UI 套件</h1><p><a target="_blank" rel="noopener" href="https://www.creative-tim.com/product/argon-design-system">https://www.creative-tim.com/product/argon-design-system</a></p>
-<h1 id="UI-套件-2"><a href="#UI-套件-2" class="headerlink" title="UI 套件"></a>UI 套件</h1><p><a target="_blank" rel="noopener" href="https://demos.creative-tim.com/paper-kit-react/?_ga=2.112318092.923676954.1591340660-1187394003.1591155183#/index">https://demos.creative-tim.com/paper-kit-react/?_ga=2.112318092.923676954.1591340660-1187394003.1591155183#/index</a></p>
-<h1 id="这个用来做仪表盘非常棒"><a href="#这个用来做仪表盘非常棒" class="headerlink" title="这个用来做仪表盘非常棒"></a>这个用来做仪表盘非常棒</h1><p><a target="_blank" rel="noopener" href="https://demos.creative-tim.com/notus-react/?_ga=2.146436855.253176018.1614889298-744974027.1614551768#/">https://demos.creative-tim.com/notus-react/?_ga=2.146436855.253176018.1614889298-744974027.1614551768#/</a></p>
-<h1 id="UI-kit"><a href="#UI-kit" class="headerlink" title="UI kit"></a>UI kit</h1><p><a target="_blank" rel="noopener" href="https://www.bootmb.com/themes/boomerang/">https://www.bootmb.com/themes/boomerang/</a></p>
-<h1 id="UI-kit-1"><a href="#UI-kit-1" class="headerlink" title="UI kit"></a>UI kit</h1><p><a target="_blank" rel="noopener" href="https://demos.creative-tim.com/now-ui-kit-react/?_ga=2.103798536.923676954.1591340660-1187394003.1591155183#/index">https://demos.creative-tim.com/now-ui-kit-react/?_ga=2.103798536.923676954.1591340660-1187394003.1591155183#/index</a></p>
-<h1 id="react-UI-模板"><a href="#react-UI-模板" class="headerlink" title="react UI 模板"></a>react UI 模板</h1><p><a target="_blank" rel="noopener" href="https://www.wrappixel.com/templates/category/react-templates/">https://www.wrappixel.com/templates/category/react-templates/</a></p>
-<h1 id="Bootstrap-4-基础组件库"><a href="#Bootstrap-4-基础组件库" class="headerlink" title="Bootstrap 4 基础组件库"></a>Bootstrap 4 基础组件库</h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/07/10/UI-%E4%B8%BB%E9%A2%98/" data-id="cll1n5o930001eovrfbkebjf2" data-title="UI 主题" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-git-代理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/07/07/git-%E4%BB%A3%E7%90%86/" class="article-date">
-  <time class="dt-published" datetime="2023-07-07T02:26:41.000Z" itemprop="datePublished">2023-07-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/07/07/git-%E4%BB%A3%E7%90%86/">git 代理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>#使用socks5代理（推荐）（不可用）<br>git config –global http.<a target="_blank" rel="noopener" href="https://github.com.proxy/">https://github.com.proxy</a> socks5:&#x2F;&#x2F;127.0.0.1:33210<br>#使用http代理（不推荐）(可用)<br>git config –global http.<a target="_blank" rel="noopener" href="https://github.com.proxy/">https://github.com.proxy</a> <a target="_blank" rel="noopener" href="http://127.0.0.1:33210/">http://127.0.0.1:33210</a></p>
-<p>git config –global http.proxy <a target="_blank" rel="noopener" href="http://127.0.0.1:33210/">http://127.0.0.1:33210</a></p>
-<p>git config –global https.proxy <a target="_blank" rel="noopener" href="https://127.0.0.1:33210/">https://127.0.0.1:33210</a></p>
-<p>git config –global –unset http.proxy</p>
-<p>git config –global –unset https.proxy</p>
-<p>git config –global –unset http.proxy</p>
-<p>git config –global –unset https.proxy</p>
-<p>git config –global –unset http.<a target="_blank" rel="noopener" href="https://github.com.proxy/">https://github.com.proxy</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/07/07/git-%E4%BB%A3%E7%90%86/" data-id="cll1n5o940002eovra3z88ynh" data-title="git 代理" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-银河麒麟编译环境" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/06/13/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/" class="article-date">
-  <time class="dt-published" datetime="2023-06-13T02:16:28.000Z" itemprop="datePublished">2023-06-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/13/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/">银河麒麟编译环境</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>关闭权限管理模块</p>
-<p>getstatus</p>
-<p>setstatus</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Sonsay/article/details/118630433">https://blog.csdn.net/Sonsay/article/details/118630433</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/06/13/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/" data-id="cliwi3qap0001akvrcpcn0ijj" data-title="银河麒麟编译环境" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Ninjia" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/06/13/Ninjia/" class="article-date">
-  <time class="dt-published" datetime="2023-06-13T01:46:52.000Z" itemprop="datePublished">2023-06-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/13/Ninjia/">Ninjia</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/06/13/Ninjia/" data-id="cliwi3qar0002akvr5hpb809c" data-title="Ninjia" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
   </nav>
 
 </section>
@@ -518,7 +553,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li></ul>
     </div>
   </div>
 
@@ -531,23 +566,23 @@
       <ul>
         
           <li>
-            <a href="/2023/10/12/node-pty/">node-pty</a>
+            <a href="/2024/02/02/jenkins/">jenkins</a>
           </li>
         
           <li>
-            <a href="/2023/08/16/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E4%B8%8A%E7%BD%91/">nginx 反向代理实现上网</a>
+            <a href="/2023/12/26/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">编码规范</a>
           </li>
         
           <li>
-            <a href="/2023/08/11/go-web-server-framework-%E8%B0%83%E7%A0%94/">go web server framework 调研</a>
+            <a href="/2023/12/20/lerna/">lerna</a>
           </li>
         
           <li>
-            <a href="/2023/08/08/madway/">midwayjs</a>
+            <a href="/2023/11/28/opensumi-%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/">opensumi 结构详解</a>
           </li>
         
           <li>
-            <a href="/2023/08/08/node-%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">node 版本管理</a>
+            <a href="/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/">LSP语言服务器</a>
           </li>
         
       </ul>
@@ -563,7 +598,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2023 zhuzeyu22<br>
+      &copy; 2024 zhuzeyu22<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

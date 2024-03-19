@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>opensumi 结构详解 | Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="插件两个入口点extensionEntryextensionWorkerEntry 由 MainApp 启动ElectronMainApp MainApp 包含codeWindowsinjectormodulesparsedArgs 注册 apiinjectLifecycleApi 12&#x2F;&#x2F; 很优秀的类型推断，判断 T 是推断类型 R 的实例类型export type TokenResult&amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="opensumi 结构详解">
+<meta property="og:url" content="https://zhuzeyu22.github.io/2023/11/28/opensumi-%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Document">
+<meta property="og:description" content="插件两个入口点extensionEntryextensionWorkerEntry 由 MainApp 启动ElectronMainApp MainApp 包含codeWindowsinjectormodulesparsedArgs 注册 apiinjectLifecycleApi 12&#x2F;&#x2F; 很优秀的类型推断，判断 T 是推断类型 R 的实例类型export type TokenResult&amp;lt">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-28T01:33:55.000Z">
+<meta property="article:modified_time" content="2023-12-29T07:39:42.887Z">
+<meta property="article:author" content="zhuzeyu22">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Document" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Document</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zhuzeyu22.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-opensumi-结构详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/28/opensumi-%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2023-11-28T01:33:55.000Z" itemprop="datePublished">2023-11-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      opensumi 结构详解
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>两个入口点<br>extensionEntry<br>extensionWorkerEntry</p>
+<p>由 MainApp 启动<br>ElectronMainApp</p>
+<p>MainApp 包含<br>codeWindows<br>injector<br>modules<br>parsedArgs</p>
+<p>注册 api<br>injectLifecycleApi</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 很优秀的类型推断，判断 T 是推断类型 R 的实例类型</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">type</span> <span class="title class_">TokenResult</span>&lt;T <span class="keyword">extends</span> <span class="title class_">Token</span>&gt; = T <span class="keyword">extends</span> <span class="title class_">ConstructorOf</span>&lt;infer R&gt; ? R : <span class="built_in">any</span>;</span><br></pre></td></tr></table></figure>
+
+<p>初始化的时候发出事件<br>ActivationEventServiceImpl</p>
+<p>export class BasicModule {<br>  @Autowired(INJECTOR_TOKEN)<br>  protected injector: Injector;<br>  providers?: Provider[];<br>  backServices?: BackService[];<br>  frontServices?: FrontService[];<br>  contributionProvider: Domain | Domain[];<br>}</p>
+<h1 id="配置项注册"><a href="#配置项注册" class="headerlink" title="配置项注册"></a>配置项注册</h1><p>this.schemaRegistry.registerSchema</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/11/28/opensumi-%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/" data-id="clty5vo4m0002pwvr61cphihv" data-title="opensumi 结构详解" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/12/20/lerna/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          lerna
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">LSP语言服务器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/02/02/jenkins/">jenkins</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/26/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">编码规范</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/20/lerna/">lerna</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/28/opensumi-%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/">opensumi 结构详解</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/">LSP语言服务器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 zhuzeyu22<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

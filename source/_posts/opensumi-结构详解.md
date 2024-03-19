@@ -41,3 +41,6 @@ export class BasicModule {
   frontServices?: FrontService[];
   contributionProvider: Domain | Domain[];
 }
+
+# 配置项注册
+this.schemaRegistry.registerSchema
