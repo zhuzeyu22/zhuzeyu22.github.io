@@ -9,3 +9,14 @@ tags:
 
 # 启动
 npm init midway@latest -y
+
+
+# 单文件部署
+参考 https://midwayjs.org/docs/deployment
+
+# swagger 配置
+https://midwayjs.org/en/docs/extensions/swagger
+
+# commitlint 配置
+https://commitlint.js.org/guides/getting-started.html
+
