@@ -20,3 +20,5 @@ https://midwayjs.org/en/docs/extensions/swagger
 # commitlint 配置
 https://commitlint.js.org/guides/getting-started.html
 
+# 数据库
+https://midwayjs.org/en/docs/2.0.0/tool/typeorm_generator
