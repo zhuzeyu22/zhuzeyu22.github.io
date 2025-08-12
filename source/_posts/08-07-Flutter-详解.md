@@ -42,4 +42,4 @@ class MyApp extends StatelessWidget {
 
 ## 关联文档
 
-- [08-常用的技术框架.md](./08-常用的技术框架.md)
+- [08-常用的技术框架.md](08-常用的技术框架.html)
