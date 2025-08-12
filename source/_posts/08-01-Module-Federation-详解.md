@@ -1,9 +1,11 @@
 ---
-title: Module Federation 详解
-date: 2025-08-12 02:47:26
+title: 08-01-Module-Federation-详解
+date: 2025-08-12 02:32:15
 tags:
 categories:
 ---
+
+# Module Federation 详解
 
 Module Federation 是 Webpack 5 引入的一项革命性特性，允许多个独立构建的应用在运行时动态地共享模块，实现真正意义上的微前端架构。
 

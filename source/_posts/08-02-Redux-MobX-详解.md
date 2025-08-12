@@ -1,9 +1,11 @@
 ---
-title: Redux/MobX 详解
-date: 2025-08-12 02:47:26
+title: 08-02-Redux-MobX-详解
+date: 2025-08-12 02:32:15
 tags:
 categories:
 ---
+
+# Redux/MobX 详解
 
 Redux 和 MobX 是前端主流的状态管理库，分别以“单向数据流”和“响应式编程”为核心理念。
 

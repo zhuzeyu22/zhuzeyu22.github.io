@@ -1,9 +1,11 @@
 ---
-title: React 详解
-date: 2025-08-12 02:47:26
+title: 08-13-React-详解
+date: 2025-08-12 02:32:15
 tags:
 categories:
 ---
+
+# React 详解
 
 React 是由 Facebook（现 Meta）开发和维护的用于构建用户界面的 JavaScript 库，主打组件化、声明式和高性能。React 通过虚拟 DOM 和单向数据流提升前端开发效率，已成为现代前端开发的事实标准之一。
 

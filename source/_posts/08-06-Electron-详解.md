@@ -1,9 +1,11 @@
 ---
-title: Electron 详解
-date: 2025-08-12 02:47:26
+title: 08-06-Electron-详解
+date: 2025-08-12 02:32:15
 tags:
 categories:
 ---
+
+# Electron 详解
 
 Electron 是基于 Chromium 和 Node.js 的跨平台桌面应用开发框架。
 

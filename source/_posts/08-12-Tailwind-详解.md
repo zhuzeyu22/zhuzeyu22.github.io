@@ -1,9 +1,11 @@
 ---
-title: Tailwind CSS 详解
-date: 2025-08-12 02:47:26
+title: 08-12-Tailwind-详解
+date: 2025-08-12 02:32:15
 tags:
 categories:
 ---
+
+# Tailwind CSS 详解
 
 Tailwind CSS 是一个功能类优先（utility-first）的 CSS 框架，通过原子化的 CSS 类实现高度灵活和高效的 UI 开发方式。相比传统组件库或样式方案，Tailwind 更侧重于“低级构建块”，开发者可以直接通过类名组合实现复杂的界面，无需频繁书写自定义 CSS。
 

@@ -1,9 +1,11 @@
 ---
-title: Flutter 详解
-date: 2025-08-12 02:47:26
+title: 08-07-Flutter-详解
+date: 2025-08-12 02:32:15
 tags:
 categories:
 ---
+
+# Flutter 详解
 
 Flutter 是 Google 推出的跨平台 UI 框架，可以同时为移动端、Web 和桌面开发应用。
 
