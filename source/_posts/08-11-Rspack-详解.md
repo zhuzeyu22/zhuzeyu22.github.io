@@ -1,8 +1,13 @@
 ---
 title: 08-11-Rspack-详解
 date: 2025-04-05 04:10:00
+permalink: 08-11-Rspack-详解.html
 tags:
+  - 前端工程化
+  - 构建工具
 categories:
+  - 前端工程化
+  - 技术框架
 ---
 
 # Rspack 详解

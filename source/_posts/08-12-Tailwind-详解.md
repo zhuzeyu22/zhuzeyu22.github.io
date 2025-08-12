@@ -1,8 +1,13 @@
 ---
 title: 08-12-Tailwind-详解
 date: 2025-04-05 04:08:00
+permalink: 08-12-Tailwind-详解.html
 tags:
+  - 前端工程化
+  - 样式框架
 categories:
+  - 前端工程化
+  - 技术框架
 ---
 
 # Tailwind CSS 详解

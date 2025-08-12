@@ -1,8 +1,13 @@
 ---
 title: 08-02-Redux-MobX-详解
 date: 2025-04-05 04:28:00
+permalink: 08-02-Redux-MobX-详解.html
 tags:
+  - 前端工程化
+  - 状态管理
 categories:
+  - 前端工程化
+  - 技术框架
 ---
 
 # Redux/MobX 详解

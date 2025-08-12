@@ -1,8 +1,13 @@
 ---
 title: 08-06-Electron-详解
 date: 2025-04-05 04:20:00
+permalink: 08-06-Electron-详解.html
 tags:
+  - 前端工程化
+  - 桌面应用
 categories:
+  - 前端工程化
+  - 技术框架
 ---
 
 # Electron 详解

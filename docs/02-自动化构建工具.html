@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>02-自动化构建工具 | Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="自动化构建工具自动化构建工具能够帮助开发者自动完成打包、压缩、转译等繁琐任务，提高开发效率。 常见构建工具 Webpack：强大的模块打包工具，支持静态资源管理、代码分割、插件体系。 Vite：新一代前端构建工具，极速冷启动，基于原生 ES 模块。 Rollup：专注于打包 JavaScript 库，输出文件体积小，适合工具库开发。 Gulp：基于流的自动化构建工具，任务编排灵活。 Rspack：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02-自动化构建工具">
+<meta property="og:url" content="https://zhuzeyu22.github.io/02-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7.html">
+<meta property="og:site_name" content="Document">
+<meta property="og:description" content="自动化构建工具自动化构建工具能够帮助开发者自动完成打包、压缩、转译等繁琐任务，提高开发效率。 常见构建工具 Webpack：强大的模块打包工具，支持静态资源管理、代码分割、插件体系。 Vite：新一代前端构建工具，极速冷启动，基于原生 ES 模块。 Rollup：专注于打包 JavaScript 库，输出文件体积小，适合工具库开发。 Gulp：基于流的自动化构建工具，任务编排灵活。 Rspack：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-04T20:42:00.000Z">
+<meta property="article:modified_time" content="2025-08-12T04:04:11.573Z">
+<meta property="article:author" content="zhuzeyu22">
+<meta property="article:tag" content="前端工程化">
+<meta property="article:tag" content="自动化构建工具">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Document" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Document</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zhuzeyu22.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-02-自动化构建工具" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/02-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7.html" class="article-date">
+  <time class="dt-published" datetime="2025-04-04T20:42:00.000Z" itemprop="datePublished">2025-04-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/">前端工程化</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      02-自动化构建工具
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="自动化构建工具"><a href="#自动化构建工具" class="headerlink" title="自动化构建工具"></a>自动化构建工具</h1><p>自动化构建工具能够帮助开发者自动完成打包、压缩、转译等繁琐任务，提高开发效率。</p>
+<h2 id="常见构建工具"><a href="#常见构建工具" class="headerlink" title="常见构建工具"></a>常见构建工具</h2><ul>
+<li>Webpack：强大的模块打包工具，支持静态资源管理、代码分割、插件体系。</li>
+<li>Vite：新一代前端构建工具，极速冷启动，基于原生 ES 模块。</li>
+<li>Rollup：专注于打包 JavaScript 库，输出文件体积小，适合工具库开发。</li>
+<li>Gulp：基于流的自动化构建工具，任务编排灵活。</li>
+<li>Rspack：由字节跳动开源的高性能 Web 构建工具，主打兼容 Webpack 生态和极致构建速度，适用于大型项目。</li>
+<li>esbuild：用 Go 编写的极速打包工具，主打极快的打包与转译速度，适合对构建性能有极高要求的场景。</li>
+</ul>
+<h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><ul>
+<li>代码打包与分割</li>
+<li>静态资源管理</li>
+<li>代码压缩与混淆</li>
+<li>预处理（如 Sass、Less 转 CSS，TypeScript 转 JavaScript）</li>
+</ul>
+<h2 id="构建工具在微前端项目中的应用"><a href="#构建工具在微前端项目中的应用" class="headerlink" title="构建工具在微前端项目中的应用"></a>构建工具在微前端项目中的应用</h2><p>微前端架构将大型应用拆分为多个独立、自治的子应用，各子应用可由不同团队独立开发和部署。自动化构建工具在微前端项目中起到至关重要的作用：</p>
+<ul>
+<li><p><strong>Webpack</strong><br>微前端主流方案（如 single-spa、qiankun）大多基于 Webpack 构建。Webpack 支持多入口配置、公共依赖分离、UMD 格式输出，便于子应用独立打包、按需加载和主应用集成。借助 Module Federation 插件，还能实现多项目间的模块共享，提升资源复用和加载效率。</p>
+</li>
+<li><p><strong>Vite</strong><br>Vite 支持微前端项目的快速开发和热更新。通过配置 base、build、output、externals 等选项，子应用可打包成适配微前端框架的独立产物。Vite 插件生态也在不断完善微前端相关能力，如 vite-plugin-qiankun 等。</p>
+</li>
+<li><p><strong>Rspack</strong><br>Rspack 兼容 Webpack 生态，适合大型微前端项目的高性能构建需求。得益于高效的增量编译和极致的打包速度，可以缩短开发和集成周期。借助与 Webpack Module Federation 兼容的方案，支持多团队协作与模块共享。</p>
+</li>
+<li><p><strong>esbuild &amp; Rollup</strong><br>适用于轻量级微前端子应用的快速打包和产物输出。可用于工具库、通用组件库等模块的独立构建，保证主应用与各子应用的灵活集成。</p>
+</li>
+<li><p><strong>Gulp</strong><br>在微前端项目中可用于自定义构建流程的自动化脚本编排，如多项目联动打包、构建产物发布等场景。</p>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>选择合适的自动化构建工具，并结合微前端架构设计，能显著提升大型前端项目的开发效率、资源复用和团队协作能力。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/02-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7.html" data-id="cme7y1hu10000vkwcaibddpqu" data-title="02-自动化构建工具" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">前端工程化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" rel="tag">自动化构建工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/04/05/01-%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          01-模块化与组件化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/03-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E6%A3%80%E6%9F%A5.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">03-代码规范与检查</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/">前端工程化</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/">技术框架</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Module-Federation/" rel="tag">Module Federation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/" rel="tag">代码检查</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" rel="tag">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" rel="tag">依赖管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">前端工程化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" rel="tag">前端框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95/" rel="tag">前端测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" rel="tag">包管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%AB%AF%E5%BC%80%E5%8F%91/" rel="tag">多端开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" rel="tag">技术框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2/" rel="tag">持续部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/" rel="tag">持续集成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" rel="tag">构建工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B7%E5%BC%8F%E6%A1%86%E6%9E%B6/" rel="tag">样式框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" rel="tag">桌面应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/" rel="tag">状态管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" rel="tag">自动化构建工具</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Module-Federation/" style="font-size: 10px;">Module Federation</a> <a href="/tags/Next/" style="font-size: 10px;">Next</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/" style="font-size: 10px;">代码检查</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 10px;">代码规范</a> <a href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" style="font-size: 10px;">依赖管理</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 20px;">前端工程化</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" style="font-size: 12.5px;">前端框架</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">前端测试</a> <a href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" style="font-size: 10px;">包管理</a> <a href="/tags/%E5%A4%9A%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 17.5px;">多端开发</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" style="font-size: 10px;">性能优化</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">技术框架</a> <a href="/tags/%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">持续部署</a> <a href="/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/" style="font-size: 10px;">持续集成</a> <a href="/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">构建工具</a> <a href="/tags/%E6%A0%B7%E5%BC%8F%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">样式框架</a> <a href="/tags/%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" style="font-size: 10px;">桌面应用</a> <a href="/tags/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/" style="font-size: 15px;">状态管理</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">自动化构建工具</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/04/05/README/">README</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/05/01-%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96/">01-模块化与组件化</a>
+          </li>
+        
+          <li>
+            <a href="/02-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7.html">02-自动化构建工具</a>
+          </li>
+        
+          <li>
+            <a href="/03-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E6%A3%80%E6%9F%A5.html">03-代码规范与检查</a>
+          </li>
+        
+          <li>
+            <a href="/04-%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2.html">04-持续集成与部署</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 zhuzeyu22<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

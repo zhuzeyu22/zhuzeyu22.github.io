@@ -1,8 +1,12 @@
 ---
 title: 08-01-Module-Federation-详解
 date: 2025-04-05 04:30:00
+permalink: 08-01-Module-Federation-详解.html
 tags:
+  - 前端工程化
+  - Module Federation
 categories:
+  - 前端工程化
 ---
 
 # Module Federation 详解

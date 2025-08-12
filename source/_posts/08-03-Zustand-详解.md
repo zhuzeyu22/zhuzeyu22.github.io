@@ -1,8 +1,13 @@
 ---
 title: 08-03-Zustand-详解
 date: 2025-04-05 04:26:00
+permalink: 08-03-Zustand-详解.html
 tags:
+  - 前端工程化
+  - 状态管理
 categories:
+  - 前端工程化
+  - 技术框架
 ---
 
 # Zustand 详解
