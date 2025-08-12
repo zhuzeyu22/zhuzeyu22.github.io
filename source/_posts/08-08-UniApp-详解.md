@@ -1,5 +1,5 @@
 ---
-title: 08-08-UniApp-详解
+title: UniApp-详解
 date: 2025-04-05 04:16:00
 permalink: 08-08-UniApp-详解.html
 tags:
@@ -7,7 +7,8 @@ tags:
   - 多端开发
 categories:
   - 前端工程化
-  - 技术框架
+  - 08-常用的技术框架
+  - UniApp-详解
 ---
 
 # UniApp 详解

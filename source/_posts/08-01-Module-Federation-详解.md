@@ -1,5 +1,5 @@
 ---
-title: 08-01-Module-Federation-详解
+title: Module-Federation-详解
 date: 2025-04-05 04:30:00
 permalink: 08-01-Module-Federation-详解.html
 tags:
@@ -7,6 +7,8 @@ tags:
   - Module Federation
 categories:
   - 前端工程化
+  - 08-常用的技术框架
+  - Module-Federation-详解
 ---
 
 # Module Federation 详解
