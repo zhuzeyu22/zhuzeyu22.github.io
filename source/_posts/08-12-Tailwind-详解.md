@@ -1,6 +1,8 @@
 ---
-title: 12-Tailwind-详解
-date: 2025-04-05 01:59:52
+title: 08-12-Tailwind-详解
+date: 2025-04-05 04:08:00
+tags:
+categories:
 ---
 
 # Tailwind CSS 详解

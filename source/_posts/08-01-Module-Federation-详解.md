@@ -1,6 +1,8 @@
 ---
-title: 01-Module-Federation-详解
-date: 2025-04-05 01:59:52
+title: 08-01-Module-Federation-详解
+date: 2025-04-05 04:30:00
+tags:
+categories:
 ---
 
 # Module Federation 详解
