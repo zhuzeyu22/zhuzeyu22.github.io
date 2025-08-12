@@ -75,6 +75,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-08-12-Tailwind-详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/08-12-Tailwind-%E8%AF%A6%E8%A7%A3.html" class="article-date">
+  <time class="dt-published" datetime="2025-04-04T20:08:00.000Z" itemprop="datePublished">2025-04-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/">前端工程化</a>►<a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/">技术框架</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/08-12-Tailwind-%E8%AF%A6%E8%A7%A3.html">08-12-Tailwind-详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Tailwind-CSS-详解"><a href="#Tailwind-CSS-详解" class="headerlink" title="Tailwind CSS 详解"></a>Tailwind CSS 详解</h1><p>Tailwind CSS 是一个功能类优先（utility-first）的 CSS 框架，通过原子化的 CSS 类实现高度灵活和高效的 UI 开发方式。相比传统组件库或样式方案，Tailwind 更侧重于“低级构建块”，开发者可以直接通过类名组合实现复杂的界面，无需频繁书写自定义 CSS。</p>
+<h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><ul>
+<li><strong>原子化 CSS 类</strong><br>每个类只负责一个样式属性（如 <code>text-center</code>、<code>p-4</code>、<code>bg-blue-500</code>），通过组合实现丰富的 UI 效果。</li>
+<li><strong>高度可定制</strong><br>使用配置文件（<code>tailwind.config.js</code>）自定义主题、断点、配色、字体等。</li>
+<li><strong>极小体积</strong><br>生产环境下结合 PurgeCSS（现为内置的 <code>content</code> 配置）自动移除未用到的 CSS，生成极小的最终文件。</li>
+<li><strong>响应式和伪类支持</strong><br>通过前缀（如 <code>sm:</code>, <code>hover:</code>）轻松实现响应式和交互性样式。</li>
+<li><strong>优秀生态</strong><br>拥有丰富的插件、UI 组件库（如 Tailwind UI、daisyUI 等）。</li>
+</ul>
+<h2 id="典型用法"><a href="#典型用法" class="headerlink" title="典型用法"></a>典型用法</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded&quot;</span>&gt;</span></span><br><span class="line">  按钮</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置示例"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// tailwind.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">content</span>: [<span class="string">&#x27;./src/**/*.&#123;js,jsx,ts,tsx,html&#125;&#x27;</span>],</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;</span><br><span class="line">      <span class="attr">colors</span>: &#123;</span><br><span class="line">        <span class="attr">brand</span>: <span class="string">&#x27;#1DA1F2&#x27;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><ul>
+<li>追求开发效率和一致性的团队 UI 设计</li>
+<li>重视响应式和组件化的中大型前端项目</li>
+<li>希望极致减少 CSS 体积和提升维护性的项目</li>
+</ul>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p><strong>优点：</strong></p>
+<ul>
+<li>开发效率极高，所见即所得</li>
+<li>自定义和主题能力强</li>
+<li>生态活跃，文档完善</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>类名较多，HTML 可读性下降（但可以用 Prettier&#x2F;插件优化）</li>
+<li>对新手有学习曲线</li>
+</ul>
+<hr>
+<h2 id="关联文档"><a href="#关联文档" class="headerlink" title="关联文档"></a>关联文档</h2><ul>
+<li><a href="./08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6.md">08-常用的技术框架.md</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/08-12-Tailwind-%E8%AF%A6%E8%A7%A3.html" data-id="cme8actri001dskwc75lbgamc" data-title="08-12-Tailwind-详解" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">前端工程化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%B7%E5%BC%8F%E6%A1%86%E6%9E%B6/" rel="tag">样式框架</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-08-13-React-详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/08-13-React-%E8%AF%A6%E8%A7%A3.html" class="article-date">
@@ -559,44 +635,6 @@
 
 
   
-    <article id="post-LSP语言服务器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T08:51:42.000Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/">LSP语言服务器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><h1 id="-2"><a href="#-2" class="headerlink" title=""></a></h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/" data-id="cme8actry003qskwc4uauh8lc" data-title="LSP语言服务器" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -622,7 +660,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Module-Federation/" rel="tag">Module Federation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/" rel="tag">代码检查</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" rel="tag">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" rel="tag">依赖管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">前端工程化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" rel="tag">前端框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95/" rel="tag">前端测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" rel="tag">包管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%AB%AF%E5%BC%80%E5%8F%91/" rel="tag">多端开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" rel="tag">技术框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2/" rel="tag">持续部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/" rel="tag">持续集成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" rel="tag">构建工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B7%E5%BC%8F%E6%A1%86%E6%9E%B6/" rel="tag">样式框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" rel="tag">桌面应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/" rel="tag">状态管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" rel="tag">自动化构建工具</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Module-Federation/" rel="tag">Module Federation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/" rel="tag">代码检查</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" rel="tag">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" rel="tag">依赖管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">前端工程化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" rel="tag">前端框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95/" rel="tag">前端测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" rel="tag">包管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%AB%AF%E5%BC%80%E5%8F%91/" rel="tag">多端开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" rel="tag">技术框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2/" rel="tag">持续部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/" rel="tag">持续集成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" rel="tag">构建工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B7%E5%BC%8F%E6%A1%86%E6%9E%B6/" rel="tag">样式框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" rel="tag">桌面应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="tag">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/" rel="tag">状态管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/" rel="tag">组件化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" rel="tag">自动化构建工具</a></li></ul>
     </div>
   </div>
 
@@ -632,7 +670,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Module-Federation/" style="font-size: 10px;">Module Federation</a> <a href="/tags/Next/" style="font-size: 10px;">Next</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/" style="font-size: 10px;">代码检查</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 10px;">代码规范</a> <a href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" style="font-size: 10px;">依赖管理</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 20px;">前端工程化</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" style="font-size: 12.5px;">前端框架</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">前端测试</a> <a href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" style="font-size: 10px;">包管理</a> <a href="/tags/%E5%A4%9A%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 17.5px;">多端开发</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" style="font-size: 10px;">性能优化</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">技术框架</a> <a href="/tags/%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">持续部署</a> <a href="/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/" style="font-size: 10px;">持续集成</a> <a href="/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">构建工具</a> <a href="/tags/%E6%A0%B7%E5%BC%8F%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">样式框架</a> <a href="/tags/%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" style="font-size: 10px;">桌面应用</a> <a href="/tags/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/" style="font-size: 15px;">状态管理</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">自动化构建工具</a>
+      <a href="/tags/Module-Federation/" style="font-size: 10px;">Module Federation</a> <a href="/tags/Next/" style="font-size: 10px;">Next</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/" style="font-size: 10px;">代码检查</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 10px;">代码规范</a> <a href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" style="font-size: 10px;">依赖管理</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 20px;">前端工程化</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" style="font-size: 12.5px;">前端框架</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">前端测试</a> <a href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" style="font-size: 10px;">包管理</a> <a href="/tags/%E5%A4%9A%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 17.5px;">多端开发</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" style="font-size: 10px;">性能优化</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">技术框架</a> <a href="/tags/%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">持续部署</a> <a href="/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/" style="font-size: 10px;">持续集成</a> <a href="/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">构建工具</a> <a href="/tags/%E6%A0%B7%E5%BC%8F%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">样式框架</a> <a href="/tags/%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" style="font-size: 10px;">桌面应用</a> <a href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" style="font-size: 10px;">模块化</a> <a href="/tags/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/" style="font-size: 15px;">状态管理</a> <a href="/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/" style="font-size: 10px;">组件化</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">自动化构建工具</a>
     </div>
   </div>
 
@@ -658,6 +696,10 @@
           </li>
         
           <li>
+            <a href="/01-%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96.html">01-模块化与组件化</a>
+          </li>
+        
+          <li>
             <a href="/02-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7.html">02-自动化构建工具</a>
           </li>
         
@@ -667,10 +709,6 @@
         
           <li>
             <a href="/04-%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2.html">04-持续集成与部署</a>
-          </li>
-        
-          <li>
-            <a href="/05-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html">05-性能优化</a>
           </li>
         
       </ul>
