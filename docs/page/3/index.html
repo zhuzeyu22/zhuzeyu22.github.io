@@ -75,80 +75,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-08-12-Tailwind-详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/08/12/08-12-Tailwind-%E8%AF%A6%E8%A7%A3/" class="article-date">
-  <time class="dt-published" datetime="2025-08-11T18:47:26.000Z" itemprop="datePublished">2025-08-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/08/12/08-12-Tailwind-%E8%AF%A6%E8%A7%A3/">Tailwind CSS 详解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Tailwind CSS 是一个功能类优先（utility-first）的 CSS 框架，通过原子化的 CSS 类实现高度灵活和高效的 UI 开发方式。相比传统组件库或样式方案，Tailwind 更侧重于“低级构建块”，开发者可以直接通过类名组合实现复杂的界面，无需频繁书写自定义 CSS。</p>
-<h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><ul>
-<li><strong>原子化 CSS 类</strong><br>每个类只负责一个样式属性（如 <code>text-center</code>、<code>p-4</code>、<code>bg-blue-500</code>），通过组合实现丰富的 UI 效果。</li>
-<li><strong>高度可定制</strong><br>使用配置文件（<code>tailwind.config.js</code>）自定义主题、断点、配色、字体等。</li>
-<li><strong>极小体积</strong><br>生产环境下结合 PurgeCSS（现为内置的 <code>content</code> 配置）自动移除未用到的 CSS，生成极小的最终文件。</li>
-<li><strong>响应式和伪类支持</strong><br>通过前缀（如 <code>sm:</code>, <code>hover:</code>）轻松实现响应式和交互性样式。</li>
-<li><strong>优秀生态</strong><br>拥有丰富的插件、UI 组件库（如 Tailwind UI、daisyUI 等）。</li>
-</ul>
-<h2 id="典型用法"><a href="#典型用法" class="headerlink" title="典型用法"></a>典型用法</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded&quot;</span>&gt;</span></span><br><span class="line">  按钮</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="配置示例"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// tailwind.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">content</span>: [<span class="string">&#x27;./src/**/*.&#123;js,jsx,ts,tsx,html&#125;&#x27;</span>],</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;</span><br><span class="line">      <span class="attr">colors</span>: &#123;</span><br><span class="line">        <span class="attr">brand</span>: <span class="string">&#x27;#1DA1F2&#x27;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><ul>
-<li>追求开发效率和一致性的团队 UI 设计</li>
-<li>重视响应式和组件化的中大型前端项目</li>
-<li>希望极致减少 CSS 体积和提升维护性的项目</li>
-</ul>
-<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p><strong>优点：</strong></p>
-<ul>
-<li>开发效率极高，所见即所得</li>
-<li>自定义和主题能力强</li>
-<li>生态活跃，文档完善</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li>类名较多，HTML 可读性下降（但可以用 Prettier&#x2F;插件优化）</li>
-<li>对新手有学习曲线</li>
-</ul>
-<hr>
-<h2 id="关联文档"><a href="#关联文档" class="headerlink" title="关联文档"></a>关联文档</h2><ul>
-<li><a href="./08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6.md">08-常用的技术框架.md</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2025/08/12/08-12-Tailwind-%E8%AF%A6%E8%A7%A3/" data-id="cme7y1hub000jvkwceuw697a6" data-title="Tailwind CSS 详解" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-08-14-Vue-详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/08/12/08-14-Vue-%E8%AF%A6%E8%A7%A3/" class="article-date">
-  <time class="dt-published" datetime="2025-08-11T18:47:26.000Z" itemprop="datePublished">2025-08-12</time>
+  <time class="dt-published" datetime="2025-08-11T18:32:15.000Z" itemprop="datePublished">2025-08-12</time>
 </a>
     
   </div>
@@ -159,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/08/12/08-14-Vue-%E8%AF%A6%E8%A7%A3/">Vue.js 详解</a>
+      <a class="p-name article-title" href="/2025/08/12/08-14-Vue-%E8%AF%A6%E8%A7%A3/">08-14-Vue-详解</a>
     </h1>
   
 
@@ -167,7 +97,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Vue.js 是一款流行的渐进式 JavaScript 框架，主打易用性、灵活性和高效的响应式数据绑定。它适合快速构建现代 Web 界面，无论小型项目还是大型应用均有广泛应用。</p>
+        <h1 id="Vue-js-详解"><a href="#Vue-js-详解" class="headerlink" title="Vue.js 详解"></a>Vue.js 详解</h1><p>Vue.js 是一款流行的渐进式 JavaScript 框架，主打易用性、灵活性和高效的响应式数据绑定。它适合快速构建现代 Web 界面，无论小型项目还是大型应用均有广泛应用。</p>
 <h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><ul>
 <li><strong>响应式数据绑定</strong><br>数据变化会自动驱动视图刷新，使用 Proxy 或 Object.defineProperty 实现。</li>
 <li><strong>组件化开发</strong><br>支持单文件组件（.vue），模板、脚本和样式高度内聚。</li>
@@ -201,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2025/08/12/08-14-Vue-%E8%AF%A6%E8%A7%A3/" data-id="cme7y1huc000kvkwc3ehe5yr0" data-title="Vue.js 详解" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://zhuzeyu22.github.io/2025/08/12/08-14-Vue-%E8%AF%A6%E8%A7%A3/" data-id="cme7y1huc000kvkwc3ehe5yr0" data-title="08-14-Vue-详解" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -216,7 +146,7 @@
     <article id="post-08-常用的技术框架" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/08/12/08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" class="article-date">
-  <time class="dt-published" datetime="2025-08-11T18:47:26.000Z" itemprop="datePublished">2025-08-12</time>
+  <time class="dt-published" datetime="2025-08-11T18:32:15.000Z" itemprop="datePublished">2025-08-12</time>
 </a>
     
   </div>
@@ -227,7 +157,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/08/12/08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/">常用的技术框架</a>
+      <a class="p-name article-title" href="/2025/08/12/08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/">08-常用的技术框架</a>
     </h1>
   
 
@@ -235,7 +165,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>前端开发中，技术框架极大提升了开发效率和代码的可维护性。以下是常见的前端技术框架分类说明：</p>
+        <h1 id="常用的技术框架"><a href="#常用的技术框架" class="headerlink" title="常用的技术框架"></a>常用的技术框架</h1><p>前端开发中，技术框架极大提升了开发效率和代码的可维护性。以下是常见的前端技术框架分类说明：</p>
 <h2 id="一、主流前端框架"><a href="#一、主流前端框架" class="headerlink" title="一、主流前端框架"></a>一、主流前端框架</h2><ul>
 <li><p><strong>React</strong><br>组件化理念，虚拟 DOM，生态丰富，适合大型复杂应用，支持 Hooks、函数式编程。</p>
 </li>
@@ -363,7 +293,59 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2025/08/12/08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" data-id="cme7y1huc000lvkwc6xhrhj6t" data-title="常用的技术框架" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://zhuzeyu22.github.io/2025/08/12/08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" data-id="cme7y1huc000lvkwc6xhrhj6t" data-title="08-常用的技术框架" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/12/README/" class="article-date">
+  <time class="dt-published" datetime="2025-08-11T18:32:15.000Z" itemprop="datePublished">2025-08-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/12/README/">README</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="前端工程化博客"><a href="#前端工程化博客" class="headerlink" title="前端工程化博客"></a>前端工程化博客</h1><p>本仓库收集与整理了前端工程化相关的知识点，每个技术要点为一个独立的 Markdown 文档，方便查阅和学习。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><a href="./01-%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96.md">模块化与组件化</a></li>
+<li><a href="./02-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7.md">自动化构建工具</a></li>
+<li><a href="./03-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E6%A3%80%E6%9F%A5.md">代码规范与检查</a></li>
+<li><a href="./04-%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2.md">持续集成与部署</a></li>
+<li><a href="./05-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md">性能优化</a></li>
+<li><a href="./06-%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95.md">前端测试</a></li>
+<li><a href="./07-%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%8E%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86.md">包管理与依赖管理</a></li>
+<li><a href="./08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6.md">常用的技术框架</a></li>
+<li><a href="./09-rspack-%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AF%B9%E6%AF%94.md">rspack 框架详解与对比</a></li>
+</ol>
+<hr>
+<h2 id="推荐工具：Husky"><a href="#推荐工具：Husky" class="headerlink" title="推荐工具：Husky"></a>推荐工具：Husky</h2><p><a target="_blank" rel="noopener" href="https://github.com/typicode/husky">Husky</a> 是一款流行的 Git hooks 工具，可用于在代码提交、推送等阶段自动执行脚本，如代码检查、格式化、测试等。<br>它常与 ESLint、Prettier、Commitlint、lint-staged 等工具配合，保障团队代码质量和开发流程自动化。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2025/08/12/README/" data-id="cme7y1hue000mvkwc0bcpcitb" data-title="README" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -747,23 +729,23 @@
       <ul>
         
           <li>
-            <a href="/2025/08/12/README/">前端工程化博客</a>
+            <a href="/2025/08/12/02-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/">02-自动化构建工具</a>
           </li>
         
           <li>
-            <a href="/2025/08/12/02-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/">自动化构建工具</a>
+            <a href="/2025/08/12/03-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E6%A3%80%E6%9F%A5/">03-代码规范与检查</a>
           </li>
         
           <li>
-            <a href="/2025/08/12/03-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E6%A3%80%E6%9F%A5/">代码规范与检查</a>
+            <a href="/2025/08/12/01-%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96/">01-模块化与组件化</a>
           </li>
         
           <li>
-            <a href="/2025/08/12/01-%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96/">模块化与组件化</a>
+            <a href="/2025/08/12/04-%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2/">04-持续集成与部署</a>
           </li>
         
           <li>
-            <a href="/2025/08/12/04-%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2/">持续集成与部署</a>
+            <a href="/2025/08/12/05-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">05-性能优化</a>
           </li>
         
       </ul>
