@@ -33,6 +33,8 @@
 
   
   
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
@@ -73,10 +75,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-markdown" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-opensumi-结构详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/05/25/markdown/" class="article-date">
-  <time class="dt-published" datetime="2023-05-25T02:20:32.000Z" itemprop="datePublished">2023-05-25</time>
+    <a href="/2023/11/28/opensumi-%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2023-11-28T01:33:55.000Z" itemprop="datePublished">2023-11-28</time>
 </a>
     
   </div>
@@ -87,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/25/markdown/">markdown</a>
+      <a class="p-name article-title" href="/2023/11/28/opensumi-%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/">opensumi 结构详解</a>
     </h1>
   
 
@@ -95,12 +97,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener" href="https://www.markdownguide.org/basic-syntax/">https://www.markdownguide.org/basic-syntax/</a></p>
+        <h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>两个入口点<br>extensionEntry<br>extensionWorkerEntry</p>
+<p>由 MainApp 启动<br>ElectronMainApp</p>
+<p>MainApp 包含<br>codeWindows<br>injector<br>modules<br>parsedArgs</p>
+<p>注册 api<br>injectLifecycleApi</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 很优秀的类型推断，判断 T 是推断类型 R 的实例类型</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">type</span> <span class="title class_">TokenResult</span>&lt;T <span class="keyword">extends</span> <span class="title class_">Token</span>&gt; = T <span class="keyword">extends</span> <span class="title class_">ConstructorOf</span>&lt;infer R&gt; ? R : <span class="built_in">any</span>;</span><br></pre></td></tr></table></figure>
+
+<p>初始化的时候发出事件<br>ActivationEventServiceImpl</p>
+<p>export class BasicModule {<br>  @Autowired(INJECTOR_TOKEN)<br>  protected injector: Injector;<br>  providers?: Provider[];<br>  backServices?: BackService[];<br>  frontServices?: FrontService[];<br>  contributionProvider: Domain | Domain[];<br>}</p>
+<h1 id="配置项注册"><a href="#配置项注册" class="headerlink" title="配置项注册"></a>配置项注册</h1><p>this.schemaRegistry.registerSchema</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/05/25/markdown/" data-id="cli2id8n800007gvr7qyzbx1p" data-title="markdown" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://zhuzeyu22.github.io/2023/11/28/opensumi-%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/" data-id="clty5vo4m0002pwvr61cphihv" data-title="opensumi 结构详解" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -112,10 +122,10 @@
 
 
   
-    <article id="post-webpack-plugins" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-LSP语言服务器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/05/25/webpack-plugins/" class="article-date">
-  <time class="dt-published" datetime="2023-05-25T02:16:19.000Z" itemprop="datePublished">2023-05-25</time>
+    <a href="/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-date">
+  <time class="dt-published" datetime="2023-11-24T08:51:42.000Z" itemprop="datePublished">2023-11-24</time>
 </a>
     
   </div>
@@ -126,7 +136,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/25/webpack-plugins/">webpack-plugins</a>
+      <a class="p-name article-title" href="/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/">LSP语言服务器</a>
     </h1>
   
 
@@ -134,98 +144,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <hr>
-<h1 id="代码分析插件"><a href="#代码分析插件" class="headerlink" title="代码分析插件"></a>代码分析插件</h1><ul>
-<li><p>BundleAnalyzerPlugin</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># linux</span><br><span class="line">webpack --profile --json &gt; stats.json</span><br><span class="line"></span><br><span class="line"># windows</span><br><span class="line">webpack --profile --json | Out-file &#x27;stats.json&#x27; -Encoding OEM</span><br><span class="line"></span><br><span class="line"># cli</span><br><span class="line">webpack-bundle-analyzer bundle/output/path/stats.json</span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<h1 id="循环依赖分析"><a href="#循环依赖分析" class="headerlink" title="循环依赖分析"></a>循环依赖分析</h1><ul>
-<li><p>CircularDependencyPlugin</p>
-<p>usage</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/circular-dependency-plugin">https://www.npmjs.com/package/circular-dependency-plugin</a></p>
-</li>
-</ul>
-<hr>
-<h1 id="清空-output-目录中内容"><a href="#清空-output-目录中内容" class="headerlink" title="清空 output 目录中内容"></a>清空 output 目录中内容</h1><ul>
-<li><p>clean-webpack-plugin</p>
-<p>usage</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/clean-webpack-plugin">https://www.npmjs.com/package/clean-webpack-plugin</a></p>
-</li>
-</ul>
-<hr>
-<h1 id="复制源码文件"><a href="#复制源码文件" class="headerlink" title="复制源码文件"></a>复制源码文件</h1><ul>
-<li><p>copy-webpack-plugin</p>
-<p>usage</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/copy-webpack-plugin">https://www.npmjs.com/package/copy-webpack-plugin</a></p>
-</li>
-</ul>
-<hr>
-<h1 id="内容安全-CSP-（Content-Security-Policy）"><a href="#内容安全-CSP-（Content-Security-Policy）" class="headerlink" title="内容安全 CSP （Content Security Policy）"></a>内容安全 CSP （Content Security Policy）</h1><ul>
-<li><p>CSP 定义</p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy</a></p>
-</li>
-<li><p>csp-html-webpack-plugin</p>
-<p>usage</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/csp-html-webpack-plugin">https://www.npmjs.com/package/csp-html-webpack-plugin</a></p>
-</li>
-</ul>
-<hr>
-<h1 id="css-优化插件"><a href="#css-优化插件" class="headerlink" title="css 优化插件"></a>css 优化插件</h1><ul>
-<li><p>css-minimizer-webpack-plugin</p>
-<p>usage</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/css-minimizer-webpack-plugin">https://www.npmjs.com/package/css-minimizer-webpack-plugin</a></p>
-</li>
-</ul>
-<hr>
-<h1 id="编译和优化-插件"><a href="#编译和优化-插件" class="headerlink" title="编译和优化 插件"></a>编译和优化 插件</h1><p>比 babel-loader&#x2F;ts-loader 更快</p>
-<p>比 Terser 更小</p>
-<ul>
-<li><p>esbuild-loader</p>
-<p>usage</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/esbuild-loader">https://www.npmjs.com/package/esbuild-loader</a></p>
-</li>
-</ul>
-<hr>
-<h1 id="字体图标插件"><a href="#字体图标插件" class="headerlink" title="字体图标插件"></a>字体图标插件</h1><ul>
-<li><p>fantasticon</p>
-<p>usage</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/fantasticon">https://www.npmjs.com/package/fantasticon</a></p>
-</li>
-</ul>
-<h1 id="使用独立进程进行-TS-类型检查"><a href="#使用独立进程进行-TS-类型检查" class="headerlink" title="使用独立进程进行 TS 类型检查"></a>使用独立进程进行 TS 类型检查</h1><ul>
-<li><p>fork-ts-checker-webpack-plugin</p>
-<p>usage</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/fork-ts-checker-webpack-plugin">https://www.npmjs.com/package/fork-ts-checker-webpack-plugin</a></p>
-</li>
-</ul>
-<hr>
-<h1 id="webpack-配置参考"><a href="#webpack-配置参考" class="headerlink" title="webpack 配置参考"></a>webpack 配置参考</h1><p><a target="_blank" rel="noopener" href="https://webpack.js.org/configuration/">https://webpack.js.org/configuration/</a></p>
-<hr>
-<h1 id="将-bundle-打包成-H5-文件"><a href="#将-bundle-打包成-H5-文件" class="headerlink" title="将 bundle 打包成 H5 文件"></a>将 bundle 打包成 H5 文件</h1><ul>
-<li><p>html-webpack-plugin</p>
-<p>uasage</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/html-webpack-plugin">https://www.npmjs.com/package/html-webpack-plugin</a></p>
-</li>
-</ul>
-<hr>
-<h1 id="图像压缩插件"><a href="#图像压缩插件" class="headerlink" title="图像压缩插件"></a>图像压缩插件</h1><ul>
-<li><p>image-minimizer-webpack-plugin</p>
-<p>usage</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/image-minimizer-webpack-plugin">https://www.npmjs.com/package/image-minimizer-webpack-plugin</a></p>
-</li>
-</ul>
-<h1 id="css-压缩插件"><a href="#css-压缩插件" class="headerlink" title="css 压缩插件"></a>css 压缩插件</h1><ul>
-<li><p>mini-css-extract-plugin</p>
-<p>usage</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/mini-css-extract-plugin">https://www.npmjs.com/package/mini-css-extract-plugin</a></p>
-</li>
-</ul>
-
+        <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><h1 id="-2"><a href="#-2" class="headerlink" title=""></a></h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/05/25/webpack-plugins/" data-id="cli2id8nd00027gvrgq5fh446" data-title="webpack-plugins" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://zhuzeyu22.github.io/2023/11/24/LSP%E8%AF%AD%E8%A8%80%E6%9C%8D%E5%8A%A1%E5%99%A8/" data-id="clty5vo4l0001pwvrgwv53b9v" data-title="LSP语言服务器" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -237,10 +160,10 @@
 
 
   
-    <article id="post-java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-node-pty" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/05/19/java/" class="article-date">
-  <time class="dt-published" datetime="2023-05-19T08:20:11.000Z" itemprop="datePublished">2023-05-19</time>
+    <a href="/2023/10/12/node-pty/" class="article-date">
+  <time class="dt-published" datetime="2023-10-12T01:36:03.000Z" itemprop="datePublished">2023-10-12</time>
 </a>
     
   </div>
@@ -251,7 +174,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/19/java/">java</a>
+      <a class="p-name article-title" href="/2023/10/12/node-pty/">node-pty</a>
     </h1>
   
 
@@ -259,12 +182,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="java-for-debian"><a href="#java-for-debian" class="headerlink" title="java for debian"></a>java for debian</h1><p>sudo apt-get install default-jre</p>
-
+        <h1 id="node-pyt-编译工具"><a href="#node-pyt-编译工具" class="headerlink" title="node-pyt 编译工具"></a>node-pyt 编译工具</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/05/19/java/" data-id="cli2id8nb00017gvr1h9shiv7" data-title="java" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://zhuzeyu22.github.io/2023/10/12/node-pty/" data-id="clpcduuba0000jkvrg6my5d18" data-title="node-pty" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -276,10 +198,10 @@
 
 
   
-    <article id="post-nexus" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-nginx-反向代理实现上网" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/05/19/nexus/" class="article-date">
-  <time class="dt-published" datetime="2023-05-19T06:42:01.000Z" itemprop="datePublished">2023-05-19</time>
+    <a href="/2023/08/16/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E4%B8%8A%E7%BD%91/" class="article-date">
+  <time class="dt-published" datetime="2023-08-16T02:07:07.000Z" itemprop="datePublished">2023-08-16</time>
 </a>
     
   </div>
@@ -290,7 +212,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/19/nexus/">nexus</a>
+      <a class="p-name article-title" href="/2023/08/16/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E4%B8%8A%E7%BD%91/">nginx 反向代理实现上网</a>
     </h1>
   
 
@@ -298,14 +220,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="deploy-for-docker"><a href="#deploy-for-docker" class="headerlink" title="deploy for docker"></a>deploy for docker</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8081:8081 --name nexus sonatype/nexus3</span><br></pre></td></tr></table></figure>
-
-<h1 id="deploy-for-debian"><a href="#deploy-for-debian" class="headerlink" title="deploy for debian"></a>deploy for debian</h1><p>wget <a target="_blank" rel="noopener" href="https://sonatype-download.global.ssl.fastly.net/repository/downloads-prod-group/3/nexus-3.35.0-02-unix.tar.gz">https://sonatype-download.global.ssl.fastly.net/repository/downloads-prod-group/3/nexus-3.35.0-02-unix.tar.gz</a></p>
-
+        <h1 id="socks5-全流量通道转发"><a href="#socks5-全流量通道转发" class="headerlink" title="socks5 全流量通道转发"></a>socks5 全流量通道转发</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/05/19/nexus/" data-id="clhu778yk0001kovr32ggfx64" data-title="nexus" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://zhuzeyu22.github.io/2023/08/16/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E4%B8%8A%E7%BD%91/" data-id="clmkcmmru0001pgvrhn337g08" data-title="nginx 反向代理实现上网" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -317,10 +236,10 @@
 
 
   
-    <article id="post-docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-go-web-server-framework-调研" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/05/19/docker/" class="article-date">
-  <time class="dt-published" datetime="2023-05-19T06:39:31.000Z" itemprop="datePublished">2023-05-19</time>
+    <a href="/2023/08/11/go-web-server-framework-%E8%B0%83%E7%A0%94/" class="article-date">
+  <time class="dt-published" datetime="2023-08-11T08:19:36.000Z" itemprop="datePublished">2023-08-11</time>
 </a>
     
   </div>
@@ -331,7 +250,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/19/docker/">docker</a>
+      <a class="p-name article-title" href="/2023/08/11/go-web-server-framework-%E8%B0%83%E7%A0%94/">go web server framework 调研</a>
     </h1>
   
 
@@ -339,14 +258,14 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="docker-deploy"><a href="#docker-deploy" class="headerlink" title="docker deploy"></a>docker deploy</h1><p>Ref:</p>
-<p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/debian/">https://docs.docker.com/engine/install/debian/</a></p>
-<h1 id="config-apt-source"><a href="#config-apt-source" class="headerlink" title="config apt source"></a>config apt source</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo \</span><br><span class="line">&quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian \</span><br><span class="line">$(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></pre></td></tr></table></figure>
+        <h1 id="iris"><a href="#iris" class="headerlink" title="iris"></a>iris</h1><ul>
+<li>类 koa 语法，没有注解</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/05/19/docker/" data-id="clhu778yh0000kovrergk65y8" data-title="docker" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://zhuzeyu22.github.io/2023/08/11/go-web-server-framework-%E8%B0%83%E7%A0%94/" data-id="clmkcmmrq0000pgvr6dxj32mj" data-title="go web server framework 调研" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -358,10 +277,10 @@
 
 
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-midway" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/05/19/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-05-19T05:16:10.379Z" itemprop="datePublished">2023-05-19</time>
+    <a href="/2023/08/08/midway/" class="article-date">
+  <time class="dt-published" datetime="2023-08-08T01:50:22.000Z" itemprop="datePublished">2023-08-08</time>
 </a>
     
   </div>
@@ -372,7 +291,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/19/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/2023/08/08/midway/">midwayjs</a>
     </h1>
   
 
@@ -380,24 +299,203 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://midwayjs.org/docs/intro">阿里巴巴 - 淘宝前端架构团队，基于渐进式理念研发的 Node.js 框架</a></li>
+</ul>
+<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>npm init midway@latest -y</p>
+<h1 id="单文件部署"><a href="#单文件部署" class="headerlink" title="单文件部署"></a>单文件部署</h1><p>参考 <a target="_blank" rel="noopener" href="https://midwayjs.org/docs/deployment">https://midwayjs.org/docs/deployment</a></p>
+<h1 id="swagger-配置"><a href="#swagger-配置" class="headerlink" title="swagger 配置"></a>swagger 配置</h1><p><a target="_blank" rel="noopener" href="https://midwayjs.org/en/docs/extensions/swagger">https://midwayjs.org/en/docs/extensions/swagger</a></p>
+<h1 id="commitlint-配置"><a href="#commitlint-配置" class="headerlink" title="commitlint 配置"></a>commitlint 配置</h1><p><a target="_blank" rel="noopener" href="https://commitlint.js.org/guides/getting-started.html">https://commitlint.js.org/guides/getting-started.html</a></p>
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><p><a target="_blank" rel="noopener" href="https://midwayjs.org/en/docs/2.0.0/tool/typeorm_generator">https://midwayjs.org/en/docs/2.0.0/tool/typeorm_generator</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/05/19/hello-world/" data-id="clhu5lysn0000asvr9p3s03qo" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://zhuzeyu22.github.io/2023/08/08/midway/" data-id="clv4ntqt80002zgvreflbbgvq" data-title="midwayjs" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-node-版本管理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/08/node-%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2023-08-08T01:45:14.000Z" itemprop="datePublished">2023-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/08/08/node-%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">node 版本管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h1><p>windows 环境下不是很好用</p>
+<h1 id="nvs"><a href="#nvs" class="headerlink" title="nvs"></a>nvs</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs/blob/master/doc/SETUP.md">setup</a></li>
+<li><a target="_blank" rel="noopener" href="https://papa31.github.io/hm/blog/2021/09/19/nvs-one-node-version-per-terminal-in-windows/">nvs 在 git bash 中的配置</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/08/08/node-%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" data-id="cll1n5o950003eovr2i5x5ol1" data-title="node 版本管理" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Koa-环境搭建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/19/Koa-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
+  <time class="dt-published" datetime="2023-07-19T02:50:00.000Z" itemprop="datePublished">2023-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/07/19/Koa-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Koa 环境搭建</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h1><p>webpack init</p>
+<p>yarn add -D @types&#x2F;node webpack-dev-middleware webpack-hot-middleware @types&#x2F;webpack-hot-middleware</p>
+<p>yarn add koa koa-body koa-logger koa-router koa-static koa-views</p>
+<p>yarn add -D @types&#x2F;koa @types&#x2F;koa-logger @types&#x2F;koa-router @types&#x2F;koa-static @types&#x2F;koa-views</p>
+<h1 id="jest-or-mocha"><a href="#jest-or-mocha" class="headerlink" title="jest or mocha"></a>jest or mocha</h1><p><a target="_blank" rel="noopener" href="https://medium.com/scrum-ai/4-testing-koa-server-with-jest-week-5-8e980cd30527">https://medium.com/scrum-ai/4-testing-koa-server-with-jest-week-5-8e980cd30527</a></p>
+<h1 id="example"><a href="#example" class="headerlink" title="example"></a>example</h1><ul>
+<li><p>官方例子<br><a target="_blank" rel="noopener" href="https://github.com/koajs/examples">https://github.com/koajs/examples</a></p>
+</li>
+<li><p>ts 模板<br><a target="_blank" rel="noopener" href="https://github.com/luciozhang/koa-ts-template">https://github.com/luciozhang/koa-ts-template</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/07/19/Koa-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-id="cll1n5o900000eovr3c77bx2n" data-title="Koa 环境搭建" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-UI-主题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/10/UI-%E4%B8%BB%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2023-07-10T05:31:00.000Z" itemprop="datePublished">2023-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/07/10/UI-%E4%B8%BB%E9%A2%98/">UI 主题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="UI-套件"><a href="#UI-套件" class="headerlink" title="UI 套件"></a>UI 套件</h1><p><a target="_blank" rel="noopener" href="https://rebassjs.org/getting-started">https://rebassjs.org/getting-started</a></p>
+<h1 id="项目管理主题"><a href="#项目管理主题" class="headerlink" title="项目管理主题"></a>项目管理主题</h1><p><a target="_blank" rel="noopener" href="https://open.cruip.com/">https://open.cruip.com/</a></p>
+<h1 id="UI-套件-1"><a href="#UI-套件-1" class="headerlink" title="UI 套件"></a>UI 套件</h1><p><a target="_blank" rel="noopener" href="https://www.creative-tim.com/product/argon-design-system">https://www.creative-tim.com/product/argon-design-system</a></p>
+<h1 id="UI-套件-2"><a href="#UI-套件-2" class="headerlink" title="UI 套件"></a>UI 套件</h1><p><a target="_blank" rel="noopener" href="https://demos.creative-tim.com/paper-kit-react/?_ga=2.112318092.923676954.1591340660-1187394003.1591155183#/index">https://demos.creative-tim.com/paper-kit-react/?_ga=2.112318092.923676954.1591340660-1187394003.1591155183#/index</a></p>
+<h1 id="这个用来做仪表盘非常棒"><a href="#这个用来做仪表盘非常棒" class="headerlink" title="这个用来做仪表盘非常棒"></a>这个用来做仪表盘非常棒</h1><p><a target="_blank" rel="noopener" href="https://demos.creative-tim.com/notus-react/?_ga=2.146436855.253176018.1614889298-744974027.1614551768#/">https://demos.creative-tim.com/notus-react/?_ga=2.146436855.253176018.1614889298-744974027.1614551768#/</a></p>
+<h1 id="UI-kit"><a href="#UI-kit" class="headerlink" title="UI kit"></a>UI kit</h1><p><a target="_blank" rel="noopener" href="https://www.bootmb.com/themes/boomerang/">https://www.bootmb.com/themes/boomerang/</a></p>
+<h1 id="UI-kit-1"><a href="#UI-kit-1" class="headerlink" title="UI kit"></a>UI kit</h1><p><a target="_blank" rel="noopener" href="https://demos.creative-tim.com/now-ui-kit-react/?_ga=2.103798536.923676954.1591340660-1187394003.1591155183#/index">https://demos.creative-tim.com/now-ui-kit-react/?_ga=2.103798536.923676954.1591340660-1187394003.1591155183#/index</a></p>
+<h1 id="react-UI-模板"><a href="#react-UI-模板" class="headerlink" title="react UI 模板"></a>react UI 模板</h1><p><a target="_blank" rel="noopener" href="https://www.wrappixel.com/templates/category/react-templates/">https://www.wrappixel.com/templates/category/react-templates/</a></p>
+<h1 id="Bootstrap-4-基础组件库"><a href="#Bootstrap-4-基础组件库" class="headerlink" title="Bootstrap 4 基础组件库"></a>Bootstrap 4 基础组件库</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/07/10/UI-%E4%B8%BB%E9%A2%98/" data-id="cll1n5o930001eovrfbkebjf2" data-title="UI 主题" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-git-代理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/07/git-%E4%BB%A3%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2023-07-07T02:26:41.000Z" itemprop="datePublished">2023-07-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/07/07/git-%E4%BB%A3%E7%90%86/">git 代理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#使用socks5代理（推荐）（不可用）<br>git config –global http.<a target="_blank" rel="noopener" href="https://github.com.proxy/">https://github.com.proxy</a> socks5:&#x2F;&#x2F;127.0.0.1:33210<br>#使用http代理（不推荐）(可用)<br>git config –global http.<a target="_blank" rel="noopener" href="https://github.com.proxy/">https://github.com.proxy</a> <a target="_blank" rel="noopener" href="http://127.0.0.1:33210/">http://127.0.0.1:33210</a></p>
+<p>git config –global http.proxy <a target="_blank" rel="noopener" href="http://127.0.0.1:33210/">http://127.0.0.1:33210</a></p>
+<p>git config –global https.proxy <a target="_blank" rel="noopener" href="https://127.0.0.1:33210/">https://127.0.0.1:33210</a></p>
+<p>git config –global –unset http.proxy</p>
+<p>git config –global –unset https.proxy</p>
+<p>git config –global –unset http.proxy</p>
+<p>git config –global –unset https.proxy</p>
+<p>git config –global –unset http.<a target="_blank" rel="noopener" href="https://github.com.proxy/">https://github.com.proxy</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/07/07/git-%E4%BB%A3%E7%90%86/" data-id="cll1n5o940002eovra3z88ynh" data-title="git 代理" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -413,7 +511,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">下一页 &raquo;</a>
   </nav>
 
 </section>
@@ -432,7 +530,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">八月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li></ul>
     </div>
   </div>
 
@@ -445,23 +543,23 @@
       <ul>
         
           <li>
-            <a href="/2024/04/18/commitlint/">commitlint</a>
+            <a href="/2025/08/12/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2024/04/15/labview/">labview</a>
+            <a href="/2025/08/12/02-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/">自动化构建工具</a>
           </li>
         
           <li>
-            <a href="/2024/02/02/jenkins/">jenkins</a>
+            <a href="/2025/08/12/03-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E6%A3%80%E6%9F%A5/">代码规范与检查</a>
           </li>
         
           <li>
-            <a href="/2023/12/26/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">编码规范</a>
+            <a href="/2025/08/12/01-%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96/">模块化与组件化</a>
           </li>
         
           <li>
-            <a href="/2023/12/20/lerna/">lerna</a>
+            <a href="/2025/08/12/04-%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2/">持续集成与部署</a>
           </li>
         
       </ul>
@@ -477,7 +575,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2024 zhuzeyu22<br>
+      &copy; 2025 zhuzeyu22<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

@@ -33,6 +33,8 @@
 
   
   
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
@@ -73,10 +75,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-原型链" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-08-12-Tailwind-详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/06/06/%E5%8E%9F%E5%9E%8B%E9%93%BE/" class="article-date">
-  <time class="dt-published" datetime="2023-06-06T09:48:17.000Z" itemprop="datePublished">2023-06-06</time>
+    <a href="/2025/08/12/08-12-Tailwind-%E8%AF%A6%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2025-08-11T18:47:26.000Z" itemprop="datePublished">2025-08-12</time>
 </a>
     
   </div>
@@ -87,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/06/%E5%8E%9F%E5%9E%8B%E9%93%BE/">原型链</a>
+      <a class="p-name article-title" href="/2025/08/12/08-12-Tailwind-%E8%AF%A6%E8%A7%A3/">Tailwind CSS 详解</a>
     </h1>
   
 
@@ -95,440 +97,111 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function [[Prototype]]:Object __proto__ null</span><br><span class="line"></span><br><span class="line">object __proto__ Object __proto__ null</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/06/06/%E5%8E%9F%E5%9E%8B%E9%93%BE/" data-id="clila6dir00002wvr1ld56nck" data-title="原型链" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+        <p>Tailwind CSS 是一个功能类优先（utility-first）的 CSS 框架，通过原子化的 CSS 类实现高度灵活和高效的 UI 开发方式。相比传统组件库或样式方案，Tailwind 更侧重于“低级构建块”，开发者可以直接通过类名组合实现复杂的界面，无需频繁书写自定义 CSS。</p>
+<h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><ul>
+<li><strong>原子化 CSS 类</strong><br>每个类只负责一个样式属性（如 <code>text-center</code>、<code>p-4</code>、<code>bg-blue-500</code>），通过组合实现丰富的 UI 效果。</li>
+<li><strong>高度可定制</strong><br>使用配置文件（<code>tailwind.config.js</code>）自定义主题、断点、配色、字体等。</li>
+<li><strong>极小体积</strong><br>生产环境下结合 PurgeCSS（现为内置的 <code>content</code> 配置）自动移除未用到的 CSS，生成极小的最终文件。</li>
+<li><strong>响应式和伪类支持</strong><br>通过前缀（如 <code>sm:</code>, <code>hover:</code>）轻松实现响应式和交互性样式。</li>
+<li><strong>优秀生态</strong><br>拥有丰富的插件、UI 组件库（如 Tailwind UI、daisyUI 等）。</li>
+</ul>
+<h2 id="典型用法"><a href="#典型用法" class="headerlink" title="典型用法"></a>典型用法</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded&quot;</span>&gt;</span></span><br><span class="line">  按钮</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="配置示例"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// tailwind.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">content</span>: [<span class="string">&#x27;./src/**/*.&#123;js,jsx,ts,tsx,html&#125;&#x27;</span>],</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;</span><br><span class="line">      <span class="attr">colors</span>: &#123;</span><br><span class="line">        <span class="attr">brand</span>: <span class="string">&#x27;#1DA1F2&#x27;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-  
-    <article id="post-前端环境搭建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/06/06/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time class="dt-published" datetime="2023-06-06T07:27:44.000Z" itemprop="datePublished">2023-06-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/06/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">前端环境搭建</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/zhuzeyu22/ts/blob/master/package.json">https://github.com/zhuzeyu22/ts/blob/master/package.json</a></p>
-<hr>
-<h1 id="monoropo"><a href="#monoropo" class="headerlink" title="monoropo"></a>monoropo</h1><p><a target="_blank" rel="noopener" href="https://github.com/zhuzeyu22/ts/blob/master/package.json">最佳实践</a></p>
+<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><ul>
+<li>追求开发效率和一致性的团队 UI 设计</li>
+<li>重视响应式和组件化的中大型前端项目</li>
+<li>希望极致减少 CSS 体积和提升维护性的项目</li>
+</ul>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p><strong>优点：</strong></p>
 <ul>
-<li><p>lerna</p>
-</li>
-<li><p>Turborepo (pipline)</p>
-</li>
+<li>开发效率极高，所见即所得</li>
+<li>自定义和主题能力强</li>
+<li>生态活跃，文档完善</li>
 </ul>
-<hr>
-<h1 id="全局依赖"><a href="#全局依赖" class="headerlink" title="全局依赖"></a>全局依赖</h1><ul>
-<li>yarn</li>
-<li>webpack</li>
-<li>webpack-cli</li>
-<li>@webpack-cli&#x2F;generators</li>
-<li>typescript</li>
-<li>@types&#x2F;node</li>
-<li>tsconfig-paths-webpack-plugin</li>
-<li>ts-loader</li>
-<li>node-loader</li>
-<li>esbuild-loader</li>
-<li>workbox-webpack-plugin</li>
-<li>mini-css-extract-plugin</li>
-<li>webpack-dev-server</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add webpack webpack-cli @webpack-cli/generators typescript @types/node tsconfig-paths-webpack-plugin ts-loader node-loader esbuild-loader workbox-webpack-plugin mini-css-extract-plugin webpack-dev-server</span><br></pre></td></tr></table></figure>
-
-<p>electron</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yarn add electron-builder</span><br><span class="line"><span class="comment"># or use electronforge (not good)</span></span><br><span class="line">yarn create electron-app my-new-app --template=webpack-typescript</span><br><span class="line">npm init electron-app@latest my-new-app -- --template=webpack-typescript</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h1><ul>
-<li><p>使用 webpack 粘合各种需要</p>
-</li>
-<li><p>tsc 支持 workspace 顶层配置一个就可以了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npx tsc --init</span><br><span class="line">npx webpack init</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>esbuild</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">resolve</span>: &#123;</span><br><span class="line">    <span class="attr">modules</span>: [<span class="string">&quot;node_modules&quot;</span>],</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">module</span>: &#123;</span><br><span class="line">    <span class="attr">rules</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/\.js$/</span>,</span><br><span class="line">        <span class="attr">use</span>: <span class="string">&quot;babel-loader&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/\.tsx?$/</span>,</span><br><span class="line">        <span class="attr">use</span>: <span class="string">&quot;ts-loader&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// Match js, jsx, ts &amp; tsx files</span></span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/\.[jt]sx?$/</span>,</span><br><span class="line">        <span class="attr">loader</span>: <span class="string">&quot;esbuild-loader&quot;</span>,</span><br><span class="line">        <span class="attr">options</span>: &#123;</span><br><span class="line">          <span class="comment">// JavaScript version to compile to</span></span><br><span class="line">          <span class="comment">// target: &quot;es2015&quot;,</span></span><br><span class="line">          <span class="attr">tsconfig</span>: <span class="string">&quot;./tsconfig.custom.json&quot;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>gulp 加速编译</p>
-</li>
-</ul>
-<hr>
-<h1 id="类型检查"><a href="#类型检查" class="headerlink" title="类型检查"></a>类型检查</h1><p>tsc -noEmit</p>
-<hr>
-<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><p>使用 yarn 配置 workspace</p>
-<p><a target="_blank" rel="noopener" href="https://yarnpkg.com/getting-started/install">https://yarnpkg.com/getting-started/install</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">e.g.</span><br><span class="line">├───modules</span><br><span class="line">│ ├───memo-a</span><br><span class="line">│ └───memo-b</span><br></pre></td></tr></table></figure>
-
+<p><strong>缺点：</strong></p>
 <ul>
-<li><p>安装某个模块的依赖</p>
-<p>yarn workspace memo-a add .&#x2F;modules&#x2F;memo-b</p>
-</li>
-<li><p>安装到工作空间</p>
-<p>yarn add cross-env -W</p>
-</li>
+<li>类名较多，HTML 可读性下降（但可以用 Prettier&#x2F;插件优化）</li>
+<li>对新手有学习曲线</li>
 </ul>
 <hr>
-<p>有工作空间之后不需要使用 yarn link 了</p>
-<p>yarn install 时候会自动构建链接</p>
+<h2 id="关联文档"><a href="#关联文档" class="headerlink" title="关联文档"></a>关联文档</h2><ul>
+<li><a href="./08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6.md">08-常用的技术框架.md</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2025/08/12/08-12-Tailwind-%E8%AF%A6%E8%A7%A3/" data-id="cme7y1hub000jvkwceuw697a6" data-title="Tailwind CSS 详解" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-08-14-Vue-详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/12/08-14-Vue-%E8%AF%A6%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2025-08-11T18:47:26.000Z" itemprop="datePublished">2025-08-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/12/08-14-Vue-%E8%AF%A6%E8%A7%A3/">Vue.js 详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Vue.js 是一款流行的渐进式 JavaScript 框架，主打易用性、灵活性和高效的响应式数据绑定。它适合快速构建现代 Web 界面，无论小型项目还是大型应用均有广泛应用。</p>
+<h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><ul>
+<li><strong>响应式数据绑定</strong><br>数据变化会自动驱动视图刷新，使用 Proxy 或 Object.defineProperty 实现。</li>
+<li><strong>组件化开发</strong><br>支持单文件组件（.vue），模板、脚本和样式高度内聚。</li>
+<li><strong>渐进式架构</strong><br>可以按需引入路由（vue-router）、状态管理（vuex&#x2F;pinia）、服务端渲染（nuxt）等。</li>
+<li><strong>模板语法简洁</strong><br>使用 HTML 模板扩展语法，易于上手。</li>
+<li><strong>优秀生态</strong><br>丰富的官方和第三方插件、UI 框架（如 Element Plus、Vant 等）。</li>
+</ul>
+<h2 id="典型用法"><a href="#典型用法" class="headerlink" title="典型用法"></a>典型用法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;p&gt;计数：&#123;&#123; count &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;button @click=&quot;count++&quot;&gt;增加&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line">const count = ref(0)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><ul>
+<li>快速开发中小型或大型 Web 应用</li>
+<li>移动端、小程序、桌面端等多端开发（如 UniApp、Electron）</li>
+<li>对开发效率、易维护性有较高要求的团队</li>
+</ul>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p><strong>优点：</strong></p>
 <ul>
-<li><p>yarn 更新</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn set version stable</span><br></pre></td></tr></table></figure></li>
+<li>上手快，文档完善</li>
+<li>响应式、模板化体验好</li>
+<li>生态丰富，社区活跃</li>
 </ul>
-<p>yarn add module-alias</p>
-<!-- - 使用 yarn link 做模块链接
-
-    yarn link --cwd .\src\modules\memo-a\ -->
-
-<hr>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>使用 (jsdoc)[<a target="_blank" rel="noopener" href="https://www.jsdoc.com.cn/]">https://www.jsdoc.com.cn/]</a></p>
-<h1 id="react"><a href="#react" class="headerlink" title="react"></a>react</h1><p>CRACO</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/06/06/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-id="clji0lspa000048vrgzpfcn0j" data-title="前端环境搭建" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-TypeScript" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/06/02/TypeScript/" class="article-date">
-  <time class="dt-published" datetime="2023-06-02T02:19:10.000Z" itemprop="datePublished">2023-06-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/02/TypeScript/">TypeScript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><p>tsc –init</p>
-<hr>
-<h1 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h1><p>tsc -w</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/06/02/TypeScript/" data-id="clik34cf5000008vrehlcfnat" data-title="TypeScript" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ninja" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/06/01/ninja/" class="article-date">
-  <time class="dt-published" datetime="2023-06-01T08:16:11.000Z" itemprop="datePublished">2023-06-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/01/ninja/">ninja</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="优化-c-x2F-c-编译速度"><a href="#优化-c-x2F-c-编译速度" class="headerlink" title="优化 c&#x2F;c++ 编译速度"></a><a target="_blank" rel="noopener" href="https://ninja-build.org/">优化 c&#x2F;c++ 编译速度</a></h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/06/01/ninja/" data-id="clik34cfb000108vrgg4z9isl" data-title="ninja" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-gulp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/06/01/gulp/" class="article-date">
-  <time class="dt-published" datetime="2023-06-01T08:15:24.000Z" itemprop="datePublished">2023-06-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/01/gulp/">gulp</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="优化-js-编译速度"><a href="#优化-js-编译速度" class="headerlink" title="优化 js 编译速度"></a><a target="_blank" rel="noopener" href="https://gulpjs.com/docs/en/getting-started/quick-start">优化 js 编译速度</a></h1><p>npm install –save-dev gulp-concat gulp-uglify gulp-tslint gulp-typescript gulp-less gulp-sourcemaps gulp-rename gulp-htmlmin gulp-copy gulp</p>
+<p><strong>缺点：</strong></p>
 <ul>
-<li>gulp 4.0.2</li>
-<li>gulp-concat 2.6.1</li>
-<li>gulp-copy 4.0.1</li>
-<li>gulp-htmlmin 5.0.1</li>
-<li>gulp-less 5.0.0</li>
-<li>gulp-rename 2.0.0</li>
-<li>gulp-sourcemaps 3.0.0</li>
-<li>gulp-tslint 8.1.4</li>
-<li>gulp-typescript 6.0.0-alpha.1</li>
-<li>gulp-uglify 3.0.2</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/06/01/gulp/" data-id="clik34cfc000208vre5br7k6j" data-title="gulp" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-pnpm" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/05/31/pnpm/" class="article-date">
-  <time class="dt-published" datetime="2023-05-31T02:35:25.000Z" itemprop="datePublished">2023-05-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/31/pnpm/">pnpm</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="依赖配置-npmrc"><a href="#依赖配置-npmrc" class="headerlink" title="依赖配置 npmrc"></a><a target="_blank" rel="noopener" href="https://pnpm.io/zh/npmrc">依赖配置 npmrc</a></h1><p><a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v6/configuring-npm/package-json">npm</a></p>
-<ul>
-<li><p>处理依赖不同版本的包时</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm config set auto-install-peers true --location project</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="link"><a href="#link" class="headerlink" title="link"></a><a target="_blank" rel="noopener" href="https://pnpm.io/zh/cli/link">link</a></h1><ul>
-<li><p>本地开发环境使用 pnpm link</p>
-<p>别名: ln</p>
-<p>使当前本地包可在系统范围内或其他位置访问。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pnpm link &lt;dir&gt;</span><br><span class="line">pnpm link --global</span><br><span class="line">pnpm link --global &lt;pkg&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/05/31/pnpm/" data-id="clib3u2740000w8vr16mx6gzn" data-title="pnpm" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Stand-build-in-objects" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/05/30/Stand-build-in-objects/" class="article-date">
-  <time class="dt-published" datetime="2023-05-30T07:08:16.000Z" itemprop="datePublished">2023-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/30/Stand-build-in-objects/">Stand build-in objects</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="js-环境中的标准内置对象"><a href="#js-环境中的标准内置对象" class="headerlink" title="js 环境中的标准内置对象"></a>js 环境中的标准内置对象</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">Ref: mdn web docs</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/05/30/Stand-build-in-objects/" data-id="cli9y0xos000040vr97uog1u0" data-title="Stand build-in objects" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-js-严格模式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/05/30/js-%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/" class="article-date">
-  <time class="dt-published" datetime="2023-05-30T06:51:04.000Z" itemprop="datePublished">2023-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/30/js-%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/">js 严格模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>严格模式中 this 不再封装为对象</p>
-<p>因为在浏览器中暴露上下文环境很危险</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/05/30/js-%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/" data-id="cli9x8ip00000vwvr2wbn1po6" data-title="js 严格模式" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-TS-class-和-function-的区别" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/05/30/TS-class-%E5%92%8C-function-%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
-  <time class="dt-published" datetime="2023-05-30T05:30:50.000Z" itemprop="datePublished">2023-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/30/TS-class-%E5%92%8C-function-%E7%9A%84%E5%8C%BA%E5%88%AB/">TS class 和 function 的区别</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h1><ul>
-<li>class 和 function 都可以作为构造函数，通过 new 操作符来实例化。</li>
+<li>过度灵活可能导致大型项目规范约束不足</li>
+<li>极大型应用下，部分高级特性学习曲线陡峭</li>
 </ul>
 <hr>
-<h1 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h1><h2 id="1-class-构造函数必须使用-new-操作符"><a href="#1-class-构造函数必须使用-new-操作符" class="headerlink" title="1. class 构造函数必须使用 new 操作符"></a>1. class 构造函数必须使用 new 操作符</h2><ul>
-<li>普通 function 构造函数把 window 作为 this 来创建实例</li>
-<li>调用 class 构造函数时如果忘了使用 new 则会抛出错误</li>
+<h2 id="关联文档"><a href="#关联文档" class="headerlink" title="关联文档"></a>关联文档</h2><ul>
+<li><a href="./08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6.md">08-常用的技术框架.md</a></li>
 </ul>
-<h2 id="2-class-声明不可以提升"><a href="#2-class-声明不可以提升" class="headerlink" title="2. class 声明不可以提升"></a>2. class 声明不可以提升</h2><ul>
-<li><p>function 构造函数声明存在提升，也就是定义构造函数的部分可以写在实例化对象的后面</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> usr = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Jack&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(usr); <span class="comment">// Person &#123; name: &#x27;Jack&#x27; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>class 声明不存在提升，声明类的部分不能写在实例化对象的后面</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> usr = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Jack&quot;</span>);</span><br><span class="line"><span class="comment">// ReferenceError: Cannot access &#x27;Person&#x27; before initialization</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="3-class-不可以用-call、apply、bind-改变执行上下文"><a href="#3-class-不可以用-call、apply、bind-改变执行上下文" class="headerlink" title="3. class 不可以用 call、apply、bind 改变执行上下文"></a>3. class 不可以用 call、apply、bind 改变执行上下文</h2><p>Ref: <a target="_blank" rel="noopener" href="https://lzxjack.top/post?title=call-apply-bind">call、apply、bind 具体使用方式</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/05/30/TS-class-%E5%92%8C-function-%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="cli9v4jxs00002gvrc5sfa0hp" data-title="TS class 和 function 的区别" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://zhuzeyu22.github.io/2025/08/12/08-14-Vue-%E8%AF%A6%E8%A7%A3/" data-id="cme7y1huc000kvkwc3ehe5yr0" data-title="Vue.js 详解" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -540,10 +213,10 @@
 
 
   
-    <article id="post-decorator" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-08-常用的技术框架" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/05/30/decorator/" class="article-date">
-  <time class="dt-published" datetime="2023-05-30T02:16:23.000Z" itemprop="datePublished">2023-05-30</time>
+    <a href="/2025/08/12/08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" class="article-date">
+  <time class="dt-published" datetime="2025-08-11T18:47:26.000Z" itemprop="datePublished">2025-08-12</time>
 </a>
     
   </div>
@@ -554,7 +227,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/30/decorator/">decorator</a>
+      <a class="p-name article-title" href="/2025/08/12/08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/">常用的技术框架</a>
     </h1>
   
 
@@ -562,55 +235,476 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="TS-decorator"><a href="#TS-decorator" class="headerlink" title="TS decorator"></a>TS decorator</h1><ul>
-<li><p>Ref: <a target="_blank" rel="noopener" href="https://www.tslang.cn/docs/handbook/decorators.html">https://www.tslang.cn/docs/handbook/decorators.html</a></p>
+        <p>前端开发中，技术框架极大提升了开发效率和代码的可维护性。以下是常见的前端技术框架分类说明：</p>
+<h2 id="一、主流前端框架"><a href="#一、主流前端框架" class="headerlink" title="一、主流前端框架"></a>一、主流前端框架</h2><ul>
+<li><p><strong>React</strong><br>组件化理念，虚拟 DOM，生态丰富，适合大型复杂应用，支持 Hooks、函数式编程。</p>
 </li>
-<li><p>虽然是实验特性，鉴于 python、 java、lua 里面都有类似的东西，以后必然 TS 会支持。</p>
+<li><p><strong>Vue.js</strong><br>渐进式框架，易学易用，数据驱动视图，适合中小型到大型项目，支持组合式 API。</p>
 </li>
-<li><p>装饰器是一种特殊类型的声明，它能够被附加到类声明，方法， 访问符，属性或参数上。</p>
+<li><p><strong>Angular</strong><br>完整的前端解决方案，内置依赖注入、模块系统，适合大型企业级项目。</p>
+</li>
+<li><p><strong>Svelte</strong><br>编译型框架，运行时极小，性能优越，开发体验现代。</p>
+</li>
+</ul>
+<h2 id="二、微前端与模块共享框架"><a href="#二、微前端与模块共享框架" class="headerlink" title="二、微前端与模块共享框架"></a>二、微前端与模块共享框架</h2><ul>
+<li><p><strong>qiankun</strong><br>基于 single-spa，支持多框架共存，主从应用解耦。</p>
+</li>
+<li><p><strong>single-spa</strong><br>实现多框架微前端整合。</p>
+</li>
+<li><p><strong>Module Federation</strong><br>Webpack 5 提供的模块联邦方案，实现不同应用间模块共享。</p>
+</li>
+</ul>
+<h2 id="三、状态管理框架"><a href="#三、状态管理框架" class="headerlink" title="三、状态管理框架"></a>三、状态管理框架</h2><ul>
+<li><strong>Redux、MobX</strong>（适用于 React 等）</li>
+<li><strong>Pinia、Vuex</strong>（适用于 Vue）</li>
+<li><strong>Zustand、Recoil</strong>（新一代 React 状态管理）</li>
+</ul>
+<h2 id="四、服务端渲染与同构框架"><a href="#四、服务端渲染与同构框架" class="headerlink" title="四、服务端渲染与同构框架"></a>四、服务端渲染与同构框架</h2><ul>
+<li><strong>Next.js</strong>（React SSR&#x2F;SSG&#x2F;全栈解决方案）</li>
+<li><strong>Nuxt.js</strong>（Vue SSR&#x2F;SSG）</li>
+<li><strong>NestJS</strong>（Node.js 服务端开发）</li>
+</ul>
+<h2 id="五、移动端框架"><a href="#五、移动端框架" class="headerlink" title="五、移动端框架"></a>五、移动端框架</h2><ul>
+<li><p><strong>React Native</strong><br>跨平台开发，代码复用率高。</p>
+</li>
+<li><p><strong>UniApp、Taro</strong><br>支持多端编译（小程序&#x2F;H5&#x2F;APP）。</p>
+</li>
+</ul>
+<h2 id="六、桌面应用框架"><a href="#六、桌面应用框架" class="headerlink" title="六、桌面应用框架"></a>六、桌面应用框架</h2><ul>
+<li><p><strong>Electron</strong><br>用于开发跨平台桌面应用（Windows、macOS、Linux），基于 Chromium 和 Node.js。</p>
+</li>
+<li><p><strong>Tauri</strong><br>更轻量、安全、性能优异的桌面应用开发框架，支持多平台。</p>
+</li>
+<li><p><strong>Neutralinojs</strong><br>轻量级桌面应用开发框架，体积小，易于上手。</p>
+</li>
+</ul>
+<h2 id="七、多平台（全端-全栈）框架"><a href="#七、多平台（全端-全栈）框架" class="headerlink" title="七、多平台（全端&#x2F;全栈）框架"></a>七、多平台（全端&#x2F;全栈）框架</h2><ul>
+<li><strong>Flutter</strong><ul>
+<li>Google 推出的多平台 UI 框架，一套代码可同时编译为移动端（iOS&#x2F;Android）、Web、桌面端（Windows&#x2F;macOS&#x2F;Linux）应用。</li>
+<li>跨平台效果极佳，动画与 UI 表现力强。</li>
+</ul>
+</li>
+<li><strong>React Native + React Native Web</strong><ul>
+<li>通过统一的 React 代码支持 Web、iOS、Android。</li>
+<li>大批第三方库支持，社区活跃。</li>
+</ul>
+</li>
+<li><strong>Capacitor&#x2F;Cordova</strong><ul>
+<li>使用 Web 技术（HTML&#x2F;CSS&#x2F;JS）封装为原生应用，适用于移动端和桌面端。</li>
+</ul>
+</li>
+<li><strong>UniApp</strong><ul>
+<li>支持一次开发，多端运行（小程序、H5、App、快应用等），生态成熟。</li>
+</ul>
+</li>
+<li><strong>Taro</strong><ul>
+<li>京东开源的多端统一开发框架，支持 React&#x2F;Vue&#x2F;小程序&#x2F;H5&#x2F;快应用等。</li>
+</ul>
+</li>
+<li><strong>Weex</strong><ul>
+<li>阿里巴巴推出的多端渲染框架，支持用 Vue.js 语法开发原生界面。</li>
+</ul>
+</li>
+<li><strong>NativeScript</strong><ul>
+<li>使用 JavaScript&#x2F;TypeScript&#x2F;Angular&#x2F;Vue 开发原生移动应用，支持丰富原生组件。</li>
+</ul>
+</li>
+<li><strong>Quasar</strong><ul>
+<li>基于 Vue 的高性能框架，支持 SPA、SSR、PWA、Mobile、Desktop（Electron）、Browser Extension 多端构建。</li>
+</ul>
+</li>
+<li><strong>Expo</strong><ul>
+<li>基于 React Native 的开发工具和云平台，适合快速开发和部署移动、多端应用。</li>
+</ul>
+</li>
+<li><strong>MAUI (.NET Multi-platform App UI)</strong><ul>
+<li>微软出品，基于 .NET 的多平台 UI 框架，支持 Win&#x2F;Mac&#x2F;iOS&#x2F;Android。</li>
+</ul>
+</li>
+</ul>
+<h2 id="八、UI-框架"><a href="#八、UI-框架" class="headerlink" title="八、UI 框架"></a>八、UI 框架</h2><ul>
+<li><strong>Ant Design</strong>（React）</li>
+<li><strong>Element Plus</strong>（Vue 3）</li>
+<li><strong>Arco Design</strong></li>
+<li><strong>Material-UI</strong>（MUI，React）</li>
+<li><strong>Naive UI</strong>（Vue 3）</li>
+<li><strong>Vant</strong>（移动端，Vue&#x2F;React）</li>
+</ul>
+<h2 id="九、CSS-框架与预处理"><a href="#九、CSS-框架与预处理" class="headerlink" title="九、CSS 框架与预处理"></a>九、CSS 框架与预处理</h2><ul>
+<li><p><strong>Tailwind CSS</strong><br>原子化 CSS，极简高效，支持自定义设计体系。</p>
+</li>
+<li><p><strong>Bootstrap</strong><br>经典 CSS 组件库，响应式布局，文档完善。</p>
+</li>
+<li><p><strong>Bulma</strong><br>纯 CSS 框架，轻量级，易扩展。</p>
+</li>
+<li><p><strong>Sass、Less、Stylus</strong><br>CSS 预处理语言，增强 CSS 语法能力。</p>
 </li>
 </ul>
 <hr>
-<h2 id="装饰器工厂"><a href="#装饰器工厂" class="headerlink" title="装饰器工厂"></a>装饰器工厂</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">color</span>(<span class="params">value: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">  <span class="comment">// 这是一个装饰器工厂</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">target</span>) &#123;</span><br><span class="line">    <span class="comment">//  这是装饰器</span></span><br><span class="line">    <span class="comment">// do something with &quot;target&quot; and &quot;value&quot;...</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>选择合适的技术框架能够大幅提升开发效率和项目质量。建议结合团队技术栈、业务需求和社区活跃度进行选型和组合。</p>
 <hr>
-<h2 id="装饰器组合"><a href="#装饰器组合" class="headerlink" title="装饰器组合"></a>装饰器组合</h2><ul>
-<li>书写在同一行上：</li>
+<h2 id="关联文档"><a href="#关联文档" class="headerlink" title="关联文档"></a>关联文档</h2><ul>
+<li><a href="./08-01-Module-Federation-%E8%AF%A6%E8%A7%A3.md">08-01-Module-Federation-详解.md</a></li>
+<li><a href="./08-02-Redux-MobX-%E8%AF%A6%E8%A7%A3.md">08-02-Redux-MobX-详解.md</a></li>
+<li><a href="./08-03-Zustand-%E8%AF%A6%E8%A7%A3.md">08-03-Zustand-详解.md</a></li>
+<li><a href="./08-04-Vuex-%E8%AF%A6%E8%A7%A3.md">08-04-Vuex-详解.md</a></li>
+<li><a href="./08-05-Next-%E8%AF%A6%E8%A7%A3.md">08-05-Next-详解.md</a></li>
+<li><a href="./08-06-Electron-%E8%AF%A6%E8%A7%A3.md">08-06-Electron-详解.md</a></li>
+<li><a href="./08-07-Flutter-%E8%AF%A6%E8%A7%A3.md">08-07-Flutter-详解.md</a></li>
+<li><a href="./08-08-UniApp-%E8%AF%A6%E8%A7%A3.md">08-08-UniApp-详解.md</a></li>
+<li><a href="./08-09-Taro-%E8%AF%A6%E8%A7%A3.md">08-09-Taro-详解.md</a></li>
+<li><a href="./08-10-Weex-%E8%AF%A6%E8%A7%A3.md">08-10-Weex-详解.md</a></li>
+<li><a href="./08-11-Rspack-%E8%AF%A6%E8%A7%A3.md">08-11-Rspack-详解.md</a></li>
+<li><a href="./08-12-Tailwind-%E8%AF%A6%E8%A7%A3.md">08-12-Tailwind-详解.md</a></li>
+<li><a href="./08-13-React-%E8%AF%A6%E8%A7%A3.md">08-13-React-详解.md</a></li>
+<li><a href="./08-14-Vue-%E8%AF%A6%E8%A7%A3.md">08-14-Vue-详解.md</a></li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@f @g x</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>书写在多行上：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@f</span><br><span class="line">@g</span><br><span class="line">x</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2025/08/12/08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" data-id="cme7y1huc000lvkwc6xhrhj6t" data-title="常用的技术框架" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
 
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">f</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;f(): evaluated&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span></span><br><span class="line"><span class="params">    target,</span></span><br><span class="line"><span class="params">    propertyKey: <span class="built_in">string</span>,</span></span><br><span class="line"><span class="params">    descriptor: PropertyDescriptor</span></span><br><span class="line"><span class="params">  </span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;f(): called&quot;</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">g</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;g(): evaluated&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span></span><br><span class="line"><span class="params">    target,</span></span><br><span class="line"><span class="params">    propertyKey: <span class="built_in">string</span>,</span></span><br><span class="line"><span class="params">    descriptor: PropertyDescriptor</span></span><br><span class="line"><span class="params">  </span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;g(): called&quot;</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span> &#123;</span><br><span class="line">  <span class="meta">@f</span>()</span><br><span class="line">  <span class="meta">@g</span>()</span><br><span class="line">  <span class="title function_">method</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f(): evaluated</span><br><span class="line">g(): evaluated</span><br><span class="line">g(): called</span><br><span class="line">f(): called</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h2 id="装饰器求值"><a href="#装饰器求值" class="headerlink" title="装饰器求值"></a>装饰器求值</h2><ol>
-<li>参数装饰器，然后依次是方法装饰器，访问符装饰器，或属性装饰器应用到每个实例成员。</li>
-<li>参数装饰器，然后依次是方法装饰器，访问符装饰器，或属性装饰器应用到每个静态成员。</li>
-<li>参数装饰器应用到构造函数。</li>
-<li>类装饰器应用到类。</li>
+  
+    <article id="post-README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/12/README/" class="article-date">
+  <time class="dt-published" datetime="2025-08-11T18:47:26.000Z" itemprop="datePublished">2025-08-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/12/README/">前端工程化博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>本仓库收集与整理了前端工程化相关的知识点，每个技术要点为一个独立的 Markdown 文档，方便查阅和学习。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><a href="./01-%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96.md">模块化与组件化</a></li>
+<li><a href="./02-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7.md">自动化构建工具</a></li>
+<li><a href="./03-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E6%A3%80%E6%9F%A5.md">代码规范与检查</a></li>
+<li><a href="./04-%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2.md">持续集成与部署</a></li>
+<li><a href="./05-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md">性能优化</a></li>
+<li><a href="./06-%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95.md">前端测试</a></li>
+<li><a href="./07-%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%8E%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86.md">包管理与依赖管理</a></li>
+<li><a href="./08-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6.md">常用的技术框架</a></li>
+<li><a href="./09-rspack-%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AF%B9%E6%AF%94.md">rspack 框架详解与对比</a></li>
 </ol>
 <hr>
-<h2 id="类装饰器"><a href="#类装饰器" class="headerlink" title="类装饰器"></a>类装饰器</h2><p>&#x2F;&#x2F; todo</p>
-<hr>
-<h2 id="方法装饰器"><a href="#方法装饰器" class="headerlink" title="方法装饰器"></a>方法装饰器</h2><p>&#x2F;&#x2F; todo</p>
-<hr>
-<h2 id="访问器装饰器"><a href="#访问器装饰器" class="headerlink" title="访问器装饰器"></a>访问器装饰器</h2><p>&#x2F;&#x2F; todo</p>
-<hr>
-<h2 id="属性装饰器"><a href="#属性装饰器" class="headerlink" title="属性装饰器"></a>属性装饰器</h2><p>&#x2F;&#x2F; todo</p>
-<hr>
-<h2 id="参数装饰器"><a href="#参数装饰器" class="headerlink" title="参数装饰器"></a>参数装饰器</h2><p>&#x2F;&#x2F; todo</p>
+<h2 id="推荐工具：Husky"><a href="#推荐工具：Husky" class="headerlink" title="推荐工具：Husky"></a>推荐工具：Husky</h2><p><a target="_blank" rel="noopener" href="https://github.com/typicode/husky">Husky</a> 是一款流行的 Git hooks 工具，可用于在代码提交、推送等阶段自动执行脚本，如代码检查、格式化、测试等。<br>它常与 ESLint、Prettier、Commitlint、lint-staged 等工具配合，保障团队代码质量和开发流程自动化。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhuzeyu22.github.io/2023/05/30/decorator/" data-id="cli9nyznh00008cvr6x3454g3" data-title="decorator" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://zhuzeyu22.github.io/2025/08/12/README/" data-id="cme7y1hue000mvkwc0bcpcitb" data-title="前端工程化博客" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="$1-全栈工程师进阶" class="h-entry article article-type-$1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/04/28/%E5%85%A8%E6%A0%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%BF%9B%E9%98%B6/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T05:55:33.000Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/04/28/%E5%85%A8%E6%A0%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%BF%9B%E9%98%B6/">全栈工程师进阶</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>全栈是一个非常立体的技术栈，基于从前端到后端的一条直线，每个技术点横向拓展是平行技术的延申，向下深挖又可以挖掘实现原理与最佳实践。</p>
+<p>我们基于目前主流的一些技术展开讨论，希望通过这些知识，让大家可以自己动手做一个相对完善的应用服务。</p>
+<h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h1 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h1><h2 id="Koa"><a href="#Koa" class="headerlink" title="Koa"></a>Koa</h2><h2 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2024/04/28/%E5%85%A8%E6%A0%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%BF%9B%E9%98%B6/" data-id="cme7y1huj000nvkwc65zadfxy" data-title="全栈工程师进阶" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="$1-commitlint" class="h-entry article article-type-$1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/04/18/commitlint/" class="article-date">
+  <time class="dt-published" datetime="2024-04-18T02:44:54.000Z" itemprop="datePublished">2024-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/04/18/commitlint/">commitlint</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://commitlint.js.org/guides/getting-started.html">https://commitlint.js.org/guides/getting-started.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2024/04/18/commitlint/" data-id="clv4ntqsy0000zgvrgal40qti" data-title="commitlint" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="$1-labview" class="h-entry article article-type-$1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/04/15/labview/" class="article-date">
+  <time class="dt-published" datetime="2024-04-15T02:13:46.000Z" itemprop="datePublished">2024-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/04/15/labview/">labview</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="教程地址"><a href="#教程地址" class="headerlink" title="教程地址"></a>教程地址</h2><p><a target="_blank" rel="noopener" href="https://lv.qizhen.xyz/ramp_up_hello_world">https://lv.qizhen.xyz/ramp_up_hello_world</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2024/04/15/labview/" data-id="clv4ntqt60001zgvrhwx87ao6" data-title="labview" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-jenkins" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/02/jenkins/" class="article-date">
+  <time class="dt-published" datetime="2024-02-02T01:26:55.000Z" itemprop="datePublished">2024-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/02/jenkins/">jenkins</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="流水线语法"><a href="#流水线语法" class="headerlink" title="流水线语法"></a>流水线语法</h2><p><a target="_blank" rel="noopener" href="https://www.jenkins.io/zh/doc/book/pipeline/syntax/">https://www.jenkins.io/zh/doc/book/pipeline/syntax/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2024/02/02/jenkins/" data-id="clty5vo4h0000pwvr88tj42r2" data-title="jenkins" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-编码规范" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/26/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" class="article-date">
+  <time class="dt-published" datetime="2023-12-26T05:18:51.000Z" itemprop="datePublished">2023-12-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/12/26/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">编码规范</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="测试驱动开发"><a href="#测试驱动开发" class="headerlink" title="测试驱动开发"></a>测试驱动开发</h1><ul>
+<li>先制定测试用例，要求全部功能点覆盖率 100%</li>
+</ul>
+<hr>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><ul>
+<li>所有公共组件的功能接口要求编写 TSDoc&#x2F;JsDoc&#x2F;Doxygen 风格的代码注释</li>
+</ul>
+<hr>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
+<li>一个函数只做一件事</li>
+<li>写代码就像写书一样，主流程就像是目录，点到函数里面才是具体的功能实现</li>
+</ul>
+<hr>
+<h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><ul>
+<li>所有功能模块完全独立，禁止互相依赖</li>
+<li>不同模块采取统一的命名方式，导出的变量名称必须符合命名规范并且完全不同</li>
+</ul>
+<hr>
+<h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><ul>
+<li>通用功能提取到公共组件库内，以便达到不同模块编码风格的一致性</li>
+</ul>
+<hr>
+<h1 id="公共组件库与开放接口"><a href="#公共组件库与开放接口" class="headerlink" title="公共组件库与开放接口"></a>公共组件库与开放接口</h1><h3 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h3><ul>
+<li>两个地方复用的代码直接拷贝</li>
+<li>三个及以上地方复用的代码抽象到公共组件库中</li>
+<li>新增的公共组件库代码需要发起代码审查会议，经过评审</li>
+</ul>
+<h3 id="变更"><a href="#变更" class="headerlink" title="变更"></a>变更</h3><ul>
+<li>任何已完成的功能禁止变更，只允许复用、新增、废弃</li>
+</ul>
+<h3 id="废弃"><a href="#废弃" class="headerlink" title="废弃"></a>废弃</h3><ul>
+<li>所有使用该功能点的代码都完成替换后才允许进行废弃</li>
+<li>废弃前应先替换成抛出异常的代码进行测试</li>
+</ul>
+<hr>
+<h1 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h1><ul>
+<li>依赖要求在编译配置中指定明确的版本，禁止自动升级</li>
+</ul>
+<hr>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><ul>
+<li>数据要求使用明确的数据类型</li>
+</ul>
+<hr>
+<h1 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h1><ul>
+<li>交互输入框要求进行严格的数据类型校验</li>
+<li>文本要求使用统一的接口进行多语言处理</li>
+</ul>
+<hr>
+<h1 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h1><ul>
+<li>要求使用支持跨平台的库函数进行路径处理，禁止拼接无法兼容多种平台的路径</li>
+</ul>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/12/26/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" data-id="clty5vo4n0004pwvr5vch8234" data-title="编码规范" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-lerna" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/20/lerna/" class="article-date">
+  <time class="dt-published" datetime="2023-12-20T02:48:18.000Z" itemprop="datePublished">2023-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/12/20/lerna/">lerna</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="init"><a href="#init" class="headerlink" title="init"></a>init</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm -g i lerna </span><br><span class="line">lerna init</span><br><span class="line">npm i</span><br><span class="line">lerna creat package-1 -y</span><br></pre></td></tr></table></figure>
+
+<h1 id="vscode-extension"><a href="#vscode-extension" class="headerlink" title="vscode extension"></a>vscode extension</h1><p>Nx</p>
+<h1 id="有用的包"><a href="#有用的包" class="headerlink" title="有用的包"></a>有用的包</h1><p>├── @babel&#x2F;<a href="mailto:&#99;&#x6c;&#x69;&#64;&#x37;&#x2e;&#50;&#x33;&#46;&#x34;">&#99;&#x6c;&#x69;&#64;&#x37;&#x2e;&#50;&#x33;&#46;&#x34;</a><br>├── @babel&#x2F;<a href="mailto:&#x63;&#111;&#114;&#x65;&#64;&#x37;&#x2e;&#x32;&#51;&#x2e;&#x36;">&#x63;&#111;&#114;&#x65;&#64;&#x37;&#x2e;&#x32;&#51;&#x2e;&#x36;</a><br>├── <a href="mailto:&#99;&#x6f;&#114;&#101;&#x70;&#x61;&#99;&#x6b;&#x40;&#48;&#x2e;&#50;&#48;&#46;&#48;">&#99;&#x6f;&#114;&#101;&#x70;&#x61;&#99;&#x6b;&#x40;&#48;&#x2e;&#50;&#48;&#46;&#48;</a><br>├── <a href="mailto:&#x6c;&#101;&#x72;&#110;&#x61;&#64;&#56;&#x2e;&#x30;&#46;&#x31;">&#x6c;&#101;&#x72;&#110;&#x61;&#64;&#56;&#x2e;&#x30;&#46;&#x31;</a><br>├── <a href="mailto:&#110;&#x70;&#109;&#x40;&#49;&#x30;&#46;&#49;&#46;&#48;">&#110;&#x70;&#109;&#x40;&#49;&#x30;&#46;&#49;&#46;&#48;</a><br>├── <a href="mailto:&#x74;&#x79;&#x70;&#x65;&#115;&#99;&#114;&#105;&#112;&#x74;&#64;&#53;&#46;&#51;&#x2e;&#51;">&#x74;&#x79;&#x70;&#x65;&#115;&#99;&#114;&#105;&#112;&#x74;&#64;&#53;&#46;&#51;&#x2e;&#51;</a><br>├── <a href="mailto:&#119;&#x65;&#98;&#112;&#97;&#99;&#107;&#45;&#x63;&#x6c;&#x69;&#64;&#53;&#46;&#49;&#46;&#x34;">&#119;&#x65;&#98;&#112;&#97;&#99;&#107;&#45;&#x63;&#x6c;&#x69;&#64;&#53;&#46;&#49;&#46;&#x34;</a><br>└── <a href="mailto:&#x77;&#x65;&#x62;&#112;&#x61;&#x63;&#x6b;&#x40;&#53;&#x2e;&#56;&#57;&#46;&#48;">&#x77;&#x65;&#x62;&#112;&#x61;&#x63;&#x6b;&#x40;&#53;&#x2e;&#56;&#57;&#46;&#48;</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhuzeyu22.github.io/2023/12/20/lerna/" data-id="clty5vo4n0003pwvr1jzadugc" data-title="lerna" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -626,7 +720,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">下一页 &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">下一页 &raquo;</a>
   </nav>
 
 </section>
@@ -645,7 +739,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">八月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li></ul>
     </div>
   </div>
 
@@ -658,23 +752,23 @@
       <ul>
         
           <li>
-            <a href="/2024/04/18/commitlint/">commitlint</a>
+            <a href="/2025/08/12/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2024/04/15/labview/">labview</a>
+            <a href="/2025/08/12/02-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/">自动化构建工具</a>
           </li>
         
           <li>
-            <a href="/2024/02/02/jenkins/">jenkins</a>
+            <a href="/2025/08/12/03-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E6%A3%80%E6%9F%A5/">代码规范与检查</a>
           </li>
         
           <li>
-            <a href="/2023/12/26/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">编码规范</a>
+            <a href="/2025/08/12/01-%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96/">模块化与组件化</a>
           </li>
         
           <li>
-            <a href="/2023/12/20/lerna/">lerna</a>
+            <a href="/2025/08/12/04-%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2/">持续集成与部署</a>
           </li>
         
       </ul>
@@ -690,7 +784,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2024 zhuzeyu22<br>
+      &copy; 2025 zhuzeyu22<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
